@@ -1,0 +1,451 @@
+2026-06-17 13:21:03,355 | INFO | Bot Started
+2026-06-17 13:21:03,355 | ERROR | This is a test error
+2026-06-17 14:50:51,123 | INFO | ===================================
+2026-06-17 14:50:51,124 | INFO | REPORT BOT STARTED
+2026-06-17 14:50:51,124 | INFO | ===================================
+2026-06-17 14:50:51,126 | INFO | Authenticating Graph
+2026-06-17 14:50:51,464 | INFO | Graph Authentication Success
+2026-06-17 14:50:51,465 | INFO | Connecting SQL Server
+2026-06-17 14:50:51,701 | INFO | SQL Connection Success
+2026-06-17 14:50:52,137 | INFO | Found 1 request(s)
+2026-06-17 14:50:52,138 | INFO | Processing: [AR-TEST02] Test Permintaan Data Otomatis
+2026-06-17 14:50:52,230 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 14:50:52,412 | INFO | Rows Returned: 100
+2026-06-17 14:50:52,413 | INFO | Exporting Excel
+2026-06-17 14:50:53,154 | INFO | Creating ZIP
+2026-06-17 14:50:53,165 | INFO | Uploading OneDrive
+2026-06-17 14:50:53,834 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 14:50:54,615 | INFO | Replying Email
+2026-06-17 14:50:56,594 | INFO | Marking Email Read
+2026-06-17 14:50:57,088 | ERROR | ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+2026-06-17 14:50:57,098 | ERROR | FATAL ERROR: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+2026-06-17 14:50:57,101 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 213, in main
+    log_success(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<2 lines>...
+        share_link
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 68, in log_success
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO dbo.EmailAutomationLog
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<17 lines>...
+        share_link
+        ^^^^^^^^^^
+    )
+    ^
+pyodbc.DataError: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 236, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<2 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 100, in log_failure
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO dbo.EmailAutomationLog
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<18 lines>...
+        str(error_message)
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.DataError: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+
+2026-06-17 14:59:28,650 | INFO | ===================================
+2026-06-17 14:59:28,651 | INFO | REPORT BOT STARTED
+2026-06-17 14:59:28,651 | INFO | ===================================
+2026-06-17 14:59:28,653 | INFO | Authenticating Graph
+2026-06-17 14:59:29,042 | INFO | Graph Authentication Success
+2026-06-17 14:59:29,042 | INFO | Connecting SQL Server
+2026-06-17 14:59:29,283 | INFO | SQL Connection Success
+2026-06-17 14:59:29,701 | INFO | Found 2 request(s)
+2026-06-17 14:59:29,701 | INFO | Processing: [AR-TEST02] - TEST LOGGING
+2026-06-17 14:59:29,749 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 14:59:30,075 | INFO | Rows Returned: 100
+2026-06-17 14:59:30,076 | INFO | Exporting Excel
+2026-06-17 14:59:30,782 | INFO | Creating ZIP
+2026-06-17 14:59:30,795 | INFO | Uploading OneDrive
+2026-06-17 14:59:31,555 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 14:59:31,993 | INFO | Replying Email
+2026-06-17 14:59:33,585 | INFO | Marking Email Read
+2026-06-17 14:59:34,076 | INFO | SUCCESS: AR-TEST02
+2026-06-17 14:59:34,077 | INFO | Processing: RE: [AR-TEST02] Test Permintaan Data Otomatis
+2026-06-17 14:59:34,112 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 14:59:34,902 | INFO | Rows Returned: 100
+2026-06-17 14:59:34,903 | INFO | Exporting Excel
+2026-06-17 14:59:35,263 | INFO | Creating ZIP
+2026-06-17 14:59:35,270 | INFO | Uploading OneDrive
+2026-06-17 14:59:36,125 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 14:59:36,547 | INFO | Replying Email
+2026-06-17 14:59:38,172 | INFO | Marking Email Read
+2026-06-17 14:59:38,783 | INFO | SUCCESS: AR-TEST02
+2026-06-17 14:59:38,784 | INFO | BOT FINISHED
+2026-06-17 15:05:02,479 | INFO | ===================================
+2026-06-17 15:05:02,480 | INFO | REPORT BOT STARTED
+2026-06-17 15:05:02,480 | INFO | ===================================
+2026-06-17 15:05:02,482 | INFO | Authenticating Graph
+2026-06-17 15:05:03,404 | INFO | Graph Authentication Success
+2026-06-17 15:05:03,404 | INFO | Connecting SQL Server
+2026-06-17 15:05:03,633 | INFO | SQL Connection Success
+2026-06-17 15:05:03,954 | ERROR | FATAL ERROR: name 'sender' is not defined
+2026-06-17 15:05:03,960 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 67, in main
+    emails = get_unread_requests(
+        token,
+        mailbox
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\mail.py", line 62, in get_unread_requests
+    if sender == mailbox.lower():
+       ^^^^^^
+NameError: name 'sender' is not defined
+
+2026-06-17 15:05:57,952 | INFO | ===================================
+2026-06-17 15:05:57,953 | INFO | REPORT BOT STARTED
+2026-06-17 15:05:57,953 | INFO | ===================================
+2026-06-17 15:05:57,954 | INFO | Authenticating Graph
+2026-06-17 15:05:58,276 | INFO | Graph Authentication Success
+2026-06-17 15:05:58,276 | INFO | Connecting SQL Server
+2026-06-17 15:05:58,459 | INFO | SQL Connection Success
+2026-06-17 15:05:58,713 | INFO | Found 1 request(s)
+2026-06-17 15:05:58,713 | INFO | Processing: [AR-TEST02] EMAIL ALIP JANGAN DIBALES
+2026-06-17 15:05:58,745 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:05:58,895 | INFO | Rows Returned: 100
+2026-06-17 15:05:58,895 | INFO | Exporting Excel
+2026-06-17 15:05:59,538 | INFO | Creating ZIP
+2026-06-17 15:05:59,546 | INFO | Uploading OneDrive
+2026-06-17 15:06:00,549 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:06:01,076 | INFO | Replying Email
+2026-06-17 15:06:02,180 | INFO | Marking Email Read
+2026-06-17 15:06:02,619 | INFO | SUCCESS: AR-TEST02
+2026-06-17 15:06:02,620 | INFO | BOT FINISHED
+2026-06-17 15:33:36,379 | INFO | ===================================
+2026-06-17 15:33:36,380 | INFO | REPORT BOT STARTED
+2026-06-17 15:33:36,380 | INFO | ===================================
+2026-06-17 15:33:36,381 | INFO | Authenticating Graph
+2026-06-17 15:33:36,827 | INFO | Graph Authentication Success
+2026-06-17 15:33:36,827 | INFO | Connecting SQL Server
+2026-06-17 15:33:37,012 | INFO | SQL Connection Success
+2026-06-17 15:33:37,487 | INFO | Found 1 request(s)
+2026-06-17 15:33:37,488 | INFO | Processing: [AR-TEST02] INI AJA YANG DIBALES
+2026-06-17 15:33:37,557 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:33:37,817 | INFO | Rows Returned: 100
+2026-06-17 15:33:37,818 | INFO | Exporting Excel
+2026-06-17 15:33:38,332 | INFO | Creating ZIP
+2026-06-17 15:33:38,341 | INFO | Uploading OneDrive
+2026-06-17 15:33:39,326 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:33:39,737 | INFO | Replying Email
+2026-06-17 15:33:42,251 | INFO | Marking Email Read
+2026-06-17 15:33:42,720 | ERROR | log_success() missing 3 required positional arguments: 'subject', 'sender_email', and 'share_link'
+2026-06-17 15:33:42,721 | ERROR | FATAL ERROR: log_failure() missing 3 required positional arguments: 'subject', 'sender_email', and 'error_message'
+2026-06-17 15:33:42,723 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 223, in main
+    log_success(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<2 lines>...
+        share_link
+        ^^^^^^^^^^
+    )
+    ^
+TypeError: log_success() missing 3 required positional arguments: 'subject', 'sender_email', and 'share_link'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 246, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<2 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+TypeError: log_failure() missing 3 required positional arguments: 'subject', 'sender_email', and 'error_message'
+
+2026-06-17 15:38:31,798 | INFO | ===================================
+2026-06-17 15:38:31,799 | INFO | REPORT BOT STARTED
+2026-06-17 15:38:31,799 | INFO | ===================================
+2026-06-17 15:38:31,800 | INFO | Authenticating Graph
+2026-06-17 15:38:32,386 | INFO | Graph Authentication Success
+2026-06-17 15:38:32,387 | INFO | Connecting SQL Server
+2026-06-17 15:38:32,565 | INFO | SQL Connection Success
+2026-06-17 15:38:32,911 | INFO | Found 0 request(s)
+2026-06-17 15:38:32,912 | INFO | BOT FINISHED
+2026-06-17 15:39:50,526 | INFO | ===================================
+2026-06-17 15:39:50,526 | INFO | REPORT BOT STARTED
+2026-06-17 15:39:50,526 | INFO | ===================================
+2026-06-17 15:39:50,527 | INFO | Authenticating Graph
+2026-06-17 15:39:51,112 | INFO | Graph Authentication Success
+2026-06-17 15:39:51,113 | INFO | Connecting SQL Server
+2026-06-17 15:39:51,231 | INFO | SQL Connection Success
+2026-06-17 15:39:51,503 | INFO | Found 0 request(s)
+2026-06-17 15:39:51,503 | INFO | BOT FINISHED
+2026-06-17 15:40:03,020 | INFO | ===================================
+2026-06-17 15:40:03,021 | INFO | REPORT BOT STARTED
+2026-06-17 15:40:03,021 | INFO | ===================================
+2026-06-17 15:40:03,021 | INFO | Authenticating Graph
+2026-06-17 15:40:03,681 | INFO | Graph Authentication Success
+2026-06-17 15:40:03,681 | INFO | Connecting SQL Server
+2026-06-17 15:40:03,899 | INFO | SQL Connection Success
+2026-06-17 15:40:04,196 | INFO | Found 0 request(s)
+2026-06-17 15:40:04,197 | INFO | BOT FINISHED
+2026-06-17 15:41:40,943 | INFO | ===================================
+2026-06-17 15:41:40,943 | INFO | REPORT BOT STARTED
+2026-06-17 15:41:40,943 | INFO | ===================================
+2026-06-17 15:41:40,944 | INFO | Authenticating Graph
+2026-06-17 15:41:41,253 | INFO | Graph Authentication Success
+2026-06-17 15:41:41,253 | INFO | Connecting SQL Server
+2026-06-17 15:41:41,346 | INFO | SQL Connection Success
+2026-06-17 15:41:41,625 | INFO | Found 0 request(s)
+2026-06-17 15:41:41,625 | INFO | BOT FINISHED
+2026-06-17 15:43:41,204 | INFO | ===================================
+2026-06-17 15:43:41,205 | INFO | REPORT BOT STARTED
+2026-06-17 15:43:41,205 | INFO | ===================================
+2026-06-17 15:43:41,206 | INFO | Authenticating Graph
+2026-06-17 15:43:41,784 | INFO | Graph Authentication Success
+2026-06-17 15:43:41,784 | INFO | Connecting SQL Server
+2026-06-17 15:43:42,022 | INFO | SQL Connection Success
+2026-06-17 15:43:42,306 | INFO | Found 0 request(s)
+2026-06-17 15:43:42,306 | INFO | BOT FINISHED
+2026-06-17 15:44:56,771 | INFO | ===================================
+2026-06-17 15:44:56,772 | INFO | REPORT BOT STARTED
+2026-06-17 15:44:56,772 | INFO | ===================================
+2026-06-17 15:44:56,773 | INFO | Authenticating Graph
+2026-06-17 15:44:57,368 | INFO | Graph Authentication Success
+2026-06-17 15:44:57,368 | INFO | Connecting SQL Server
+2026-06-17 15:44:57,578 | INFO | SQL Connection Success
+2026-06-17 15:44:57,772 | ERROR | FATAL ERROR: 400 Client Error: Bad Request for url: https://graph.microsoft.com/v1.0/users/erlangga.nugraha@work.brins.co.id/messagesand%20receivedDateTime%20ge%202026-06-17T00:00:00Z&$select=id,subject,conversationId,receivedDateTime,from&$orderby=receivedDateTime%20desc&$top=100
+2026-06-17 15:44:57,779 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 67, in main
+    emails = get_unread_requests(
+        token,
+        mailbox
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\mail.py", line 49, in get_unread_requests
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://graph.microsoft.com/v1.0/users/erlangga.nugraha@work.brins.co.id/messagesand%20receivedDateTime%20ge%202026-06-17T00:00:00Z&$select=id,subject,conversationId,receivedDateTime,from&$orderby=receivedDateTime%20desc&$top=100
+
+2026-06-17 15:45:55,851 | INFO | ===================================
+2026-06-17 15:45:55,852 | INFO | REPORT BOT STARTED
+2026-06-17 15:45:55,852 | INFO | ===================================
+2026-06-17 15:45:55,852 | INFO | Authenticating Graph
+2026-06-17 15:45:56,178 | INFO | Graph Authentication Success
+2026-06-17 15:45:56,179 | INFO | Connecting SQL Server
+2026-06-17 15:45:56,303 | INFO | SQL Connection Success
+2026-06-17 15:45:56,594 | INFO | Found 0 request(s)
+2026-06-17 15:45:56,595 | INFO | BOT FINISHED
+2026-06-17 15:46:23,448 | INFO | ===================================
+2026-06-17 15:46:23,448 | INFO | REPORT BOT STARTED
+2026-06-17 15:46:23,449 | INFO | ===================================
+2026-06-17 15:46:23,449 | INFO | Authenticating Graph
+2026-06-17 15:46:23,802 | INFO | Graph Authentication Success
+2026-06-17 15:46:23,802 | INFO | Connecting SQL Server
+2026-06-17 15:46:23,892 | INFO | SQL Connection Success
+2026-06-17 15:46:23,976 | ERROR | FATAL ERROR: 400 Client Error: Bad Request for url: https://graph.microsoft.com/v1.0/users/erlangga.nugraha@work.brins.co.id/messages?$filter=isRead%20eq%20falseand%20receivedDateTime%20ge%202026-06-17T00:00:00Z&$select=id,subject,conversationId,receivedDateTime,from&$orderby=receivedDateTime%20desc&$top=100
+2026-06-17 15:46:23,978 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 67, in main
+    emails = get_unread_requests(
+        token,
+        mailbox
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\mail.py", line 49, in get_unread_requests
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://graph.microsoft.com/v1.0/users/erlangga.nugraha@work.brins.co.id/messages?$filter=isRead%20eq%20falseand%20receivedDateTime%20ge%202026-06-17T00:00:00Z&$select=id,subject,conversationId,receivedDateTime,from&$orderby=receivedDateTime%20desc&$top=100
+
+2026-06-17 15:46:32,555 | INFO | ===================================
+2026-06-17 15:46:32,555 | INFO | REPORT BOT STARTED
+2026-06-17 15:46:32,556 | INFO | ===================================
+2026-06-17 15:46:32,556 | INFO | Authenticating Graph
+2026-06-17 15:46:32,949 | INFO | Graph Authentication Success
+2026-06-17 15:46:32,949 | INFO | Connecting SQL Server
+2026-06-17 15:46:33,123 | INFO | SQL Connection Success
+2026-06-17 15:46:33,372 | INFO | Found 0 request(s)
+2026-06-17 15:46:33,372 | INFO | BOT FINISHED
+2026-06-17 15:49:20,686 | INFO | ===================================
+2026-06-17 15:49:20,687 | INFO | REPORT BOT STARTED
+2026-06-17 15:49:20,687 | INFO | ===================================
+2026-06-17 15:49:20,688 | INFO | Authenticating Graph
+2026-06-17 15:49:20,995 | INFO | Graph Authentication Success
+2026-06-17 15:49:20,995 | INFO | Connecting SQL Server
+2026-06-17 15:49:21,101 | INFO | SQL Connection Success
+2026-06-17 15:49:21,282 | ERROR | FATAL ERROR: 400 Client Error: Bad Request for url: https://graph.microsoft.com/v1.0/users/erlangga.nugraha@work.brins.co.id/messagesand%20receivedDateTime%20ge%202026-06-17T00:00:00Z&$select=id,subject,conversationId,receivedDateTime,from&$orderby=receivedDateTime%20desc&$top=100
+2026-06-17 15:49:21,284 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 67, in main
+    emails = get_unread_requests(
+        token,
+        mailbox
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\mail.py", line 49, in get_unread_requests
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://graph.microsoft.com/v1.0/users/erlangga.nugraha@work.brins.co.id/messagesand%20receivedDateTime%20ge%202026-06-17T00:00:00Z&$select=id,subject,conversationId,receivedDateTime,from&$orderby=receivedDateTime%20desc&$top=100
+
+2026-06-17 15:50:18,524 | INFO | ===================================
+2026-06-17 15:50:18,524 | INFO | REPORT BOT STARTED
+2026-06-17 15:50:18,524 | INFO | ===================================
+2026-06-17 15:50:18,524 | INFO | Authenticating Graph
+2026-06-17 15:50:18,911 | INFO | Graph Authentication Success
+2026-06-17 15:50:18,911 | INFO | Connecting SQL Server
+2026-06-17 15:50:19,002 | INFO | SQL Connection Success
+2026-06-17 15:50:19,260 | INFO | Found 5 request(s)
+2026-06-17 15:50:19,260 | INFO | Processing: [AR-TEST02] BALES INI DONG
+2026-06-17 15:50:19,293 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:50:19,438 | INFO | Rows Returned: 100
+2026-06-17 15:50:19,438 | INFO | Exporting Excel
+2026-06-17 15:50:19,891 | INFO | Creating ZIP
+2026-06-17 15:50:19,898 | INFO | Uploading OneDrive
+2026-06-17 15:50:20,392 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:50:20,832 | INFO | Replying Email
+2026-06-17 15:50:22,088 | INFO | Marking Email Read
+2026-06-17 15:50:22,363 | ERROR | log_success() missing 3 required positional arguments: 'subject', 'sender_email', and 'share_link'
+2026-06-17 15:50:22,363 | ERROR | FATAL ERROR: log_failure() missing 3 required positional arguments: 'subject', 'sender_email', and 'error_message'
+2026-06-17 15:50:22,365 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 223, in main
+    log_success(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<2 lines>...
+        share_link
+        ^^^^^^^^^^
+    )
+    ^
+TypeError: log_success() missing 3 required positional arguments: 'subject', 'sender_email', and 'share_link'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 246, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<2 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+TypeError: log_failure() missing 3 required positional arguments: 'subject', 'sender_email', and 'error_message'
+
+2026-06-17 15:54:31,176 | INFO | ===================================
+2026-06-17 15:54:31,177 | INFO | REPORT BOT STARTED
+2026-06-17 15:54:31,177 | INFO | ===================================
+2026-06-17 15:54:31,177 | INFO | Authenticating Graph
+2026-06-17 15:54:31,523 | INFO | Graph Authentication Success
+2026-06-17 15:54:31,524 | INFO | Connecting SQL Server
+2026-06-17 15:54:31,729 | INFO | SQL Connection Success
+2026-06-17 15:54:32,169 | INFO | Found 5 request(s)
+2026-06-17 15:54:32,169 | INFO | Processing: [AR-TEST02] BALES INI DONG
+2026-06-17 15:54:32,211 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:54:32,339 | INFO | Rows Returned: 100
+2026-06-17 15:54:32,339 | INFO | Exporting Excel
+2026-06-17 15:54:32,743 | INFO | Creating ZIP
+2026-06-17 15:54:32,749 | INFO | Uploading OneDrive
+2026-06-17 15:54:33,577 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:54:33,935 | INFO | Replying Email
+2026-06-17 15:54:35,225 | INFO | Marking Email Read
+2026-06-17 15:54:35,570 | INFO | SUCCESS: AR-TEST02
+2026-06-17 15:54:35,572 | INFO | Processing: [AR-TEST02] INI AJA YANG DIBALES
+2026-06-17 15:54:35,607 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:54:35,652 | INFO | Rows Returned: 100
+2026-06-17 15:54:35,652 | INFO | Exporting Excel
+2026-06-17 15:54:35,834 | INFO | Creating ZIP
+2026-06-17 15:54:35,838 | INFO | Uploading OneDrive
+2026-06-17 15:54:36,542 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:54:36,919 | INFO | Replying Email
+2026-06-17 15:54:38,292 | INFO | Marking Email Read
+2026-06-17 15:54:38,625 | INFO | SUCCESS: AR-TEST02
+2026-06-17 15:54:38,627 | INFO | Processing: [AR-TEST02] EMAIL ALIP JANGAN DIBALES
+2026-06-17 15:54:38,656 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:54:38,691 | INFO | Rows Returned: 100
+2026-06-17 15:54:38,691 | INFO | Exporting Excel
+2026-06-17 15:54:38,873 | INFO | Creating ZIP
+2026-06-17 15:54:38,877 | INFO | Uploading OneDrive
+2026-06-17 15:54:39,397 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:54:39,783 | INFO | Replying Email
+2026-06-17 15:54:41,359 | INFO | Marking Email Read
+2026-06-17 15:54:41,816 | INFO | SUCCESS: AR-TEST02
+2026-06-17 15:54:41,817 | INFO | Processing: [AR-TEST02] - TEST LOGGING
+2026-06-17 15:54:41,850 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:54:41,888 | INFO | Rows Returned: 100
+2026-06-17 15:54:41,889 | INFO | Exporting Excel
+2026-06-17 15:54:42,099 | INFO | Creating ZIP
+2026-06-17 15:54:42,104 | INFO | Uploading OneDrive
+2026-06-17 15:54:42,875 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:54:43,285 | INFO | Replying Email
+2026-06-17 15:54:44,863 | INFO | Marking Email Read
+2026-06-17 15:54:45,213 | INFO | SUCCESS: AR-TEST02
+2026-06-17 15:54:45,215 | INFO | Processing: [AR-TEST02] Test Permintaan Data Otomatis
+2026-06-17 15:54:45,266 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-17 15:54:45,297 | INFO | Rows Returned: 100
+2026-06-17 15:54:45,298 | INFO | Exporting Excel
+2026-06-17 15:54:45,474 | INFO | Creating ZIP
+2026-06-17 15:54:45,478 | INFO | Uploading OneDrive
+2026-06-17 15:54:46,207 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-17 15:54:46,579 | INFO | Replying Email
+2026-06-17 15:54:47,943 | INFO | Marking Email Read
+2026-06-17 15:54:48,350 | INFO | SUCCESS: AR-TEST02
+2026-06-17 15:54:48,351 | INFO | BOT FINISHED
+2026-06-17 15:56:23,129 | INFO | ===================================
+2026-06-17 15:56:23,129 | INFO | REPORT BOT STARTED
+2026-06-17 15:56:23,129 | INFO | ===================================
+2026-06-17 15:56:23,130 | INFO | Authenticating Graph
+2026-06-17 15:56:23,480 | INFO | Graph Authentication Success
+2026-06-17 15:56:23,480 | INFO | Connecting SQL Server
+2026-06-17 15:56:23,579 | INFO | SQL Connection Success
+2026-06-17 15:56:23,874 | INFO | Found 0 request(s)
+2026-06-17 15:56:23,874 | INFO | BOT FINISHED
+2026-06-17 15:58:36,159 | INFO | ===================================
+2026-06-17 15:58:36,160 | INFO | REPORT BOT STARTED
+2026-06-17 15:58:36,160 | INFO | ===================================
+2026-06-17 15:58:36,160 | INFO | Authenticating Graph
+2026-06-17 15:58:36,816 | INFO | Graph Authentication Success
+2026-06-17 15:58:36,816 | INFO | Connecting SQL Server
+2026-06-17 15:58:36,957 | INFO | SQL Connection Success
+2026-06-17 15:58:37,330 | INFO | Found 0 request(s)
+2026-06-17 15:58:37,330 | INFO | BOT FINISHED
+2026-06-17 15:58:40,749 | INFO | ===================================
+2026-06-17 15:58:40,750 | INFO | REPORT BOT STARTED
+2026-06-17 15:58:40,750 | INFO | ===================================
+2026-06-17 15:58:40,750 | INFO | Authenticating Graph
+2026-06-17 15:58:41,298 | INFO | Graph Authentication Success
+2026-06-17 15:58:41,298 | INFO | Connecting SQL Server
+2026-06-17 15:58:41,433 | INFO | SQL Connection Success
+2026-06-17 15:58:41,726 | INFO | Found 0 request(s)
+2026-06-17 15:58:41,726 | INFO | BOT FINISHED
+2026-06-17 15:59:58,258 | INFO | ===================================
+2026-06-17 15:59:58,259 | INFO | REPORT BOT STARTED
+2026-06-17 15:59:58,259 | INFO | ===================================
+2026-06-17 15:59:58,260 | INFO | Authenticating Graph
+2026-06-17 15:59:58,633 | INFO | Graph Authentication Success
+2026-06-17 15:59:58,633 | INFO | Connecting SQL Server
+2026-06-17 15:59:58,792 | INFO | SQL Connection Success
+2026-06-17 15:59:59,070 | INFO | Found 0 request(s)
+2026-06-17 15:59:59,070 | INFO | BOT FINISHED

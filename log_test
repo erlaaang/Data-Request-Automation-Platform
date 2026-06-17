@@ -1,0 +1,6 @@
+from modules.logger import setup_logger
+
+logger = setup_logger()
+
+logger.info("Bot Started")
+logger.error("This is a test error")
