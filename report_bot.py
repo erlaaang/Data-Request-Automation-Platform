@@ -159,10 +159,10 @@ def main():
 
                 excel_files = export_to_excel(
                     conn,
-                    mapping["Final_Table"],
+                    mapping["final_table"],
                     "temp",
-                    mapping["OutputFileName"],
-                    mapping["OrderByColumn"]
+                    mapping["output_file"],
+                    mapping["order_by_column"]
                 )
 
                 password = (

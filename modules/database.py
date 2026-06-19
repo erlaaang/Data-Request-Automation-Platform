@@ -28,6 +28,7 @@ def get_mapping(conn, request_id):
             StoredProcedure,
             FinalTable,
             OutputFileName,
+            OrderByColumn,
             OneDriveFolder
         FROM dbo.ReportRequestMapping
         WHERE RequestID = ?
@@ -44,6 +45,7 @@ def get_mapping(conn, request_id):
         "stored_procedure": row.StoredProcedure,
         "final_table": row.FinalTable,
         "output_file": row.OutputFileName,
+        "order_by_column": row.OrderByColumn,
         "folder": row.OneDriveFolder
     }
 
