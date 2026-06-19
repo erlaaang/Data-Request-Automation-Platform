@@ -4,9 +4,10 @@ import pyzipper
 
 
 def create_zip(
-        source_file,
-        zip_file,
-        password):
+    source_files,
+    zip_file,
+    password
+    ):
 
     os.makedirs(
         os.path.dirname(zip_file),
@@ -24,9 +25,11 @@ def create_zip(
             password.encode()
         )
 
-        zf.write(
-            source_file,
-            arcname=os.path.basename(source_file)
-        )
+        for file in source_files:
+
+            zf.write(
+                file,
+                arcname=os.path.basename(file)
+            )
 
     return zip_file

@@ -117,9 +117,9 @@ INSERT INTO dbo.ReportRequestMapping
 )
 VALUES
 (
-    'DR-TEST01',
-    'dbo.sp_test_report',
-    'TestReport',
+    'AR-TEST03',
+    'dbo.SP_TEST03',
+    'TEST>1MILROW',
     'ReportAutomation/Test',
     1
 );

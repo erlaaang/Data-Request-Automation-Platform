@@ -4,7 +4,7 @@ conn = get_connection(config)
 
 mapping = get_mapping(
     conn,
-    "DR-TEST01"
+    "AR-TEST02"
 )
 
 print(mapping)

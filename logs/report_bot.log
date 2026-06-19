@@ -449,3 +449,774 @@ TypeError: log_failure() missing 3 required positional arguments: 'subject', 'se
 2026-06-17 15:59:58,792 | INFO | SQL Connection Success
 2026-06-17 15:59:59,070 | INFO | Found 0 request(s)
 2026-06-17 15:59:59,070 | INFO | BOT FINISHED
+2026-06-18 16:37:03,657 | INFO | ===================================
+2026-06-18 16:37:03,658 | INFO | REPORT BOT STARTED
+2026-06-18 16:37:03,658 | INFO | ===================================
+2026-06-18 16:37:03,658 | INFO | Authenticating Graph
+2026-06-18 16:37:04,668 | INFO | Graph Authentication Success
+2026-06-18 16:37:04,669 | INFO | Connecting SQL Server
+2026-06-18 16:37:04,929 | INFO | SQL Connection Success
+2026-06-18 16:37:05,597 | INFO | Found 1 request(s)
+2026-06-18 16:37:05,598 | INFO | Processing: [AR-TEST03]
+2026-06-18 16:37:05,625 | INFO | Executing SP: dbo.SP_TEST03
+2026-06-18 16:37:29,203 | INFO | Rows Returned: 1200000
+2026-06-18 16:37:29,203 | INFO | Exporting Excel
+2026-06-18 16:37:29,465 | ERROR | [Errno 22] Invalid argument: 'temp\\TEST>1MILROW_Part1.xlsx'
+2026-06-18 16:37:29,514 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 155, in main
+    excel_files = export_to_excel(
+        df,
+        "temp",
+        excel_name
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 69, in export_to_excel
+    chunk.to_excel(
+    ~~~~~~~~~~~~~~^
+        file_path,
+        ^^^^^^^^^^
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\core\generic.py", line 2312, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\formats\excel.py", line 1003, in write
+    writer = ExcelWriter(
+        writer,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 62, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<3 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1281, in __init__
+    self._handles = get_handle(
+                    ~~~~~~~~~~^
+        path, mode, storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\common.py", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+OSError: [Errno 22] Invalid argument: 'temp\\TEST>1MILROW_Part1.xlsx'
+
+2026-06-18 16:37:29,515 | INFO | BOT FINISHED
+2026-06-18 16:44:54,401 | INFO | ===================================
+2026-06-18 16:44:54,401 | INFO | REPORT BOT STARTED
+2026-06-18 16:44:54,401 | INFO | ===================================
+2026-06-18 16:44:54,402 | INFO | Authenticating Graph
+2026-06-18 16:44:55,039 | INFO | Graph Authentication Success
+2026-06-18 16:44:55,039 | INFO | Connecting SQL Server
+2026-06-18 16:44:55,181 | INFO | SQL Connection Success
+2026-06-18 16:44:55,548 | INFO | Found 1 request(s)
+2026-06-18 16:44:55,548 | INFO | Processing: [AR-TEST03]
+2026-06-18 16:44:55,589 | INFO | Executing SP: dbo.SP_TEST03
+2026-06-18 16:45:05,595 | INFO | Rows Returned: 1200000
+2026-06-18 16:45:05,595 | INFO | Exporting Excel
+2026-06-18 16:45:05,837 | ERROR | [Errno 22] Invalid argument: 'temp\\TEST>1MILROW_Part1.xlsx'
+2026-06-18 16:45:05,849 | ERROR | FATAL ERROR: ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__EmailAut__C87C037C9AFD57F8'. Cannot insert duplicate key in object 'dbo.EmailAutomationLog'. The duplicate key value is (AQMkAGQxZmUwZjA2LTYwNDctNDc0ZC05YmM5LTE3MTM3MmJmYjA2NABGAAADwmQMaAhK3E_GQBdR3C6CoAcAwgvuP1rqK0GLAwcWjZhK-AAAAgEMAAAAwgvuP1rqK0GLAwcWjZhK-AABSAISsAAAAA==). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-06-18 16:45:05,857 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 155, in main
+    excel_files = export_to_excel(
+        df,
+        "temp",
+        excel_name
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 69, in export_to_excel
+    chunk.to_excel(
+    ~~~~~~~~~~~~~~^
+        file_path,
+        ^^^^^^^^^^
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\core\generic.py", line 2312, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\formats\excel.py", line 1003, in write
+    writer = ExcelWriter(
+        writer,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 62, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<3 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1281, in __init__
+    self._handles = get_handle(
+                    ~~~~~~~~~~^
+        path, mode, storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\common.py", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+OSError: [Errno 22] Invalid argument: 'temp\\TEST>1MILROW_Part1.xlsx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 249, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<5 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 131, in log_failure
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO dbo.EmailAutomationLog
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<25 lines>...
+    str(error_message)
+    ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__EmailAut__C87C037C9AFD57F8'. Cannot insert duplicate key in object 'dbo.EmailAutomationLog'. The duplicate key value is (AQMkAGQxZmUwZjA2LTYwNDctNDc0ZC05YmM5LTE3MTM3MmJmYjA2NABGAAADwmQMaAhK3E_GQBdR3C6CoAcAwgvuP1rqK0GLAwcWjZhK-AAAAgEMAAAAwgvuP1rqK0GLAwcWjZhK-AABSAISsAAAAA==). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+
+2026-06-19 15:10:36,300 | INFO | ===================================
+2026-06-19 15:10:36,301 | INFO | REPORT BOT STARTED
+2026-06-19 15:10:36,301 | INFO | ===================================
+2026-06-19 15:10:36,302 | INFO | Authenticating Graph
+2026-06-19 15:10:37,330 | INFO | Graph Authentication Success
+2026-06-19 15:10:37,331 | INFO | Connecting SQL Server
+2026-06-19 15:10:37,625 | INFO | SQL Connection Success
+2026-06-19 15:10:38,453 | INFO | Found 1 request(s)
+2026-06-19 15:10:38,454 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 15:10:38,538 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 15:21:40,711 | ERROR | ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot drop the table 'TAMPUNGAN.DBO.AKUABNBPADANG', because it does not exist or you do not have permission. (3701) (SQLExecDirectW)")
+2026-06-19 15:21:40,712 | ERROR | FATAL ERROR: ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2026-06-19 15:21:40,718 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    df = execute_sp(
+        conn,
+        mapping["stored_procedure"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 170, in execute_sp
+    return pd.read_sql(
+           ~~~~~~~~~~~^
+        query,
+        ^^^^^^
+        conn
+        ^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\sql.py", line 702, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\sql.py", line 2766, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\sql.py", line 2702, in execute
+    cur.execute(sql, *args)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot drop the table 'TAMPUNGAN.DBO.AKUABNBPADANG', because it does not exist or you do not have permission. (3701) (SQLExecDirectW)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 249, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<5 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 131, in log_failure
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO dbo.EmailAutomationLog
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<25 lines>...
+    str(error_message)
+    ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.Error: ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+
+2026-06-19 15:23:48,693 | INFO | ===================================
+2026-06-19 15:23:48,693 | INFO | REPORT BOT STARTED
+2026-06-19 15:23:48,693 | INFO | ===================================
+2026-06-19 15:23:48,694 | INFO | Authenticating Graph
+2026-06-19 15:24:42,809 | ERROR | FATAL ERROR: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Read timed out. (read timeout=None)
+2026-06-19 15:24:42,832 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\adapters.py", line 645, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+        self, url, f"Read timed out. (read timeout={timeout_value})"
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Read timed out. (read timeout=None)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 54, in main
+    token = get_token(config)
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\auth.py", line 19, in get_token
+    result = app.acquire_token_for_client(
+        scopes=[
+            "https://graph.microsoft.com/.default"
+        ]
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\application.py", line 2533, in acquire_token_for_client
+    return _clean_up(self._acquire_token_silent_with_error(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        scopes, None, claims_challenge=claims_challenge, **kwargs))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\application.py", line 1570, in _acquire_token_silent_with_error
+    result = self._acquire_token_silent_from_cache_and_possibly_refresh_it(
+        scopes, account, self.authority, force_refresh=force_refresh,
+    ...<2 lines>...
+        auth_scheme=auth_scheme,
+        **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\application.py", line 1716, in _acquire_token_silent_from_cache_and_possibly_refresh_it
+    result = self._acquire_token_for_client(
+        scopes, refresh_reason, claims_challenge=claims_challenge,
+        **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\application.py", line 2552, in _acquire_token_for_client
+    response = client.obtain_token_for_client(
+        scope=scopes,  # This grant flow requires no scope decoration
+    ...<4 lines>...
+                self._client_capabilities, claims_challenge)),
+        **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\oauth2cli\oauth2.py", line 816, in obtain_token_for_client
+    return self._obtain_token("client_credentials", data=data, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\oauth2cli\oidc.py", line 169, in _obtain_token
+    ret = super(Client, self)._obtain_token(grant_type, *args, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\oauth2cli\oauth2.py", line 863, in _obtain_token
+    resp = super(Client, self)._obtain_token(
+        grant_type, params, _data, *args, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\oauth2cli\oauth2.py", line 282, in _obtain_token
+    resp = (post or self._http_client.post)(
+        self.configuration["token_endpoint"],
+        headers=_headers, params=params, data=_data,
+        **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\msal\throttled_http_client.py", line 96, in post
+    return NormalizedResponse(self.http_client.post(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\adapters.py", line 691, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Read timed out. (read timeout=None)
+
+2026-06-19 15:26:22,380 | INFO | ===================================
+2026-06-19 15:26:22,381 | INFO | REPORT BOT STARTED
+2026-06-19 15:26:22,381 | INFO | ===================================
+2026-06-19 15:26:22,381 | INFO | Authenticating Graph
+2026-06-19 15:26:24,224 | INFO | Graph Authentication Success
+2026-06-19 15:26:24,224 | INFO | Connecting SQL Server
+2026-06-19 15:26:24,551 | INFO | SQL Connection Success
+2026-06-19 15:26:24,954 | INFO | Found 1 request(s)
+2026-06-19 15:26:24,955 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 15:26:25,050 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 15:34:02,332 | ERROR | 'NoneType' object is not iterable
+2026-06-19 15:34:02,338 | ERROR | FATAL ERROR: ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2026-06-19 15:34:02,344 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    df = execute_sp(
+        conn,
+        mapping["stored_procedure"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 170, in execute_sp
+    return pd.read_sql(
+           ~~~~~~~~~~~^
+        query,
+        ^^^^^^
+        conn
+        ^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\sql.py", line 702, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\sql.py", line 2767, in read_query
+    columns = [col_desc[0] for col_desc in cursor.description]
+                                           ^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 249, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<5 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 131, in log_failure
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO dbo.EmailAutomationLog
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<25 lines>...
+    str(error_message)
+    ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.Error: ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+
+2026-06-19 15:59:24,299 | INFO | ===================================
+2026-06-19 15:59:24,300 | INFO | REPORT BOT STARTED
+2026-06-19 15:59:24,300 | INFO | ===================================
+2026-06-19 15:59:24,301 | INFO | Authenticating Graph
+2026-06-19 15:59:25,292 | INFO | Graph Authentication Success
+2026-06-19 15:59:25,292 | INFO | Connecting SQL Server
+2026-06-19 15:59:25,531 | INFO | SQL Connection Success
+2026-06-19 15:59:26,340 | INFO | Found 1 request(s)
+2026-06-19 15:59:26,340 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 15:59:26,498 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 15:59:26,499 | ERROR | name 'cursor' is not defined
+2026-06-19 15:59:26,564 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    df = execute_sp(
+        conn,
+        mapping["stored_procedure"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 169, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ^^^^^^
+NameError: name 'cursor' is not defined
+
+2026-06-19 15:59:26,565 | INFO | BOT FINISHED
+2026-06-19 16:00:12,746 | INFO | ===================================
+2026-06-19 16:00:12,746 | INFO | REPORT BOT STARTED
+2026-06-19 16:00:12,747 | INFO | ===================================
+2026-06-19 16:00:12,748 | INFO | Authenticating Graph
+2026-06-19 16:00:13,430 | INFO | Graph Authentication Success
+2026-06-19 16:00:13,430 | INFO | Connecting SQL Server
+2026-06-19 16:00:13,610 | INFO | SQL Connection Success
+2026-06-19 16:00:14,545 | INFO | Found 1 request(s)
+2026-06-19 16:00:14,546 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 16:00:14,602 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 16:16:07,383 | INFO | ===================================
+2026-06-19 16:16:07,383 | INFO | REPORT BOT STARTED
+2026-06-19 16:16:07,383 | INFO | ===================================
+2026-06-19 16:16:07,384 | INFO | Authenticating Graph
+2026-06-19 16:16:07,900 | INFO | Graph Authentication Success
+2026-06-19 16:16:07,900 | INFO | Connecting SQL Server
+2026-06-19 16:16:08,204 | INFO | SQL Connection Success
+2026-06-19 16:16:08,682 | INFO | Found 1 request(s)
+2026-06-19 16:16:08,682 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 16:16:08,792 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 16:29:31,467 | ERROR | object of type 'NoneType' has no len()
+2026-06-19 16:29:31,490 | ERROR | FATAL ERROR: ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__EmailAut__C87C037C9AFD57F8'. Cannot insert duplicate key in object 'dbo.EmailAutomationLog'. The duplicate key value is (AQMkAGQxZmUwZjA2LTYwNDctNDc0ZC05YmM5LTE3MTM3MmJmYjA2NABGAAADwmQMaAhK3E_GQBdR3C6CoAcAwgvuP1rqK0GLAwcWjZhK-AAAAgEMAAAAwgvuP1rqK0GLAwcWjZhK-AABSAISvQAAAA==). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-06-19 16:29:31,493 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 140, in main
+    f"Rows Returned: {len(df)}"
+                      ~~~^^^^
+TypeError: object of type 'NoneType' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 251, in main
+    log_failure(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<5 lines>...
+        str(e)
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 131, in log_failure
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO dbo.EmailAutomationLog
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<25 lines>...
+    str(error_message)
+    ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__EmailAut__C87C037C9AFD57F8'. Cannot insert duplicate key in object 'dbo.EmailAutomationLog'. The duplicate key value is (AQMkAGQxZmUwZjA2LTYwNDctNDc0ZC05YmM5LTE3MTM3MmJmYjA2NABGAAADwmQMaAhK3E_GQBdR3C6CoAcAwgvuP1rqK0GLAwcWjZhK-AAAAgEMAAAAwgvuP1rqK0GLAwcWjZhK-AABSAISvQAAAA==). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+
+2026-06-19 16:44:01,649 | INFO | ===================================
+2026-06-19 16:44:01,649 | INFO | REPORT BOT STARTED
+2026-06-19 16:44:01,649 | INFO | ===================================
+2026-06-19 16:44:01,650 | INFO | Authenticating Graph
+2026-06-19 16:44:02,569 | INFO | Graph Authentication Success
+2026-06-19 16:44:02,570 | INFO | Connecting SQL Server
+2026-06-19 16:44:02,827 | INFO | SQL Connection Success
+2026-06-19 16:44:03,132 | INFO | Found 1 request(s)
+2026-06-19 16:44:03,132 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 16:44:03,209 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 16:51:29,448 | ERROR | object of type 'NoneType' has no len()
+2026-06-19 16:51:29,508 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 140, in main
+    f"Rows Returned: {len(df)}"
+                      ~~~^^^^
+TypeError: object of type 'NoneType' has no len()
+
+2026-06-19 16:51:29,508 | INFO | BOT FINISHED
+2026-06-19 16:57:41,881 | INFO | ===================================
+2026-06-19 16:57:41,882 | INFO | REPORT BOT STARTED
+2026-06-19 16:57:41,882 | INFO | ===================================
+2026-06-19 16:57:41,883 | INFO | Authenticating Graph
+2026-06-19 16:57:42,906 | INFO | Graph Authentication Success
+2026-06-19 16:57:42,907 | INFO | Connecting SQL Server
+2026-06-19 16:57:43,089 | INFO | SQL Connection Success
+2026-06-19 16:57:43,498 | INFO | Found 1 request(s)
+2026-06-19 16:57:43,499 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 16:57:43,539 | ERROR | 'pyodbc.Row' object has no attribute 'FinalTable'
+2026-06-19 16:57:43,600 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 119, in main
+    mapping = get_mapping(
+        conn,
+        request_id
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 44, in get_mapping
+    "final_table": row.FinalTable,
+                   ^^^^^^^^^^^^^^
+AttributeError: 'pyodbc.Row' object has no attribute 'FinalTable'
+
+2026-06-19 16:57:43,614 | INFO | BOT FINISHED
+2026-06-19 16:58:21,899 | INFO | ===================================
+2026-06-19 16:58:21,900 | INFO | REPORT BOT STARTED
+2026-06-19 16:58:21,900 | INFO | ===================================
+2026-06-19 16:58:21,900 | INFO | Authenticating Graph
+2026-06-19 16:58:22,882 | INFO | Graph Authentication Success
+2026-06-19 16:58:22,882 | INFO | Connecting SQL Server
+2026-06-19 16:58:23,022 | INFO | SQL Connection Success
+2026-06-19 16:58:23,627 | INFO | Found 1 request(s)
+2026-06-19 16:58:23,627 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 16:58:23,679 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 17:05:39,696 | ERROR | object of type 'NoneType' has no len()
+2026-06-19 17:05:39,745 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 140, in main
+    f"Rows Returned: {len(df)}"
+                      ~~~^^^^
+TypeError: object of type 'NoneType' has no len()
+
+2026-06-19 17:05:39,745 | INFO | BOT FINISHED
+2026-06-19 17:09:21,752 | INFO | ===================================
+2026-06-19 17:09:21,752 | INFO | REPORT BOT STARTED
+2026-06-19 17:09:21,752 | INFO | ===================================
+2026-06-19 17:09:21,753 | INFO | Authenticating Graph
+2026-06-19 17:09:22,448 | INFO | Graph Authentication Success
+2026-06-19 17:09:22,448 | INFO | Connecting SQL Server
+2026-06-19 17:09:22,591 | INFO | SQL Connection Success
+2026-06-19 17:09:23,263 | INFO | Found 1 request(s)
+2026-06-19 17:09:23,263 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 17:09:23,315 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 17:16:34,445 | ERROR | ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNBVIA'. (208) (SQLExecDirectW)")
+2026-06-19 17:16:34,490 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 139, in main
+    totalrow = get_total_rows(
+        conn,
+        mapping["final_table"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 13, in get_total_rows
+    cursor.execute(
+    ~~~~~~~~~~~~~~^
+        f"SELECT COUNT(*) FROM {table_name}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNBVIA'. (208) (SQLExecDirectW)")
+
+2026-06-19 17:16:34,490 | INFO | BOT FINISHED
+2026-06-19 20:12:29,112 | INFO | ===================================
+2026-06-19 20:12:29,113 | INFO | REPORT BOT STARTED
+2026-06-19 20:12:29,113 | INFO | ===================================
+2026-06-19 20:12:29,114 | INFO | Authenticating Graph
+2026-06-19 20:12:29,768 | INFO | Graph Authentication Success
+2026-06-19 20:12:29,768 | INFO | Connecting SQL Server
+2026-06-19 20:13:06,096 | ERROR | FATAL ERROR: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [64].  (64) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (64)')
+2026-06-19 20:13:06,101 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 63, in main
+    conn = get_connection(config)
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 11, in get_connection
+    return pyodbc.connect(
+           ~~~~~~~~~~~~~~^
+        f"""
+        ^^^^
+    ...<5 lines>...
+        """
+        ^^^
+    )
+    ^
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [64].  (64) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (64)')
+
+2026-06-19 20:14:30,904 | INFO | ===================================
+2026-06-19 20:14:30,904 | INFO | REPORT BOT STARTED
+2026-06-19 20:14:30,905 | INFO | ===================================
+2026-06-19 20:14:30,905 | INFO | Authenticating Graph
+2026-06-19 20:14:31,217 | INFO | Graph Authentication Success
+2026-06-19 20:14:31,217 | INFO | Connecting SQL Server
+2026-06-19 20:14:31,337 | INFO | SQL Connection Success
+2026-06-19 20:14:31,837 | INFO | Found 1 request(s)
+2026-06-19 20:14:31,837 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 20:14:31,880 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 20:14:31,911 | ERROR | ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+2026-06-19 20:14:32,046 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    df = execute_sp(
+        conn,
+        mapping["stored_procedure"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 226, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.Error: ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+
+2026-06-19 20:14:32,046 | INFO | BOT FINISHED
+2026-06-19 20:23:38,993 | INFO | ===================================
+2026-06-19 20:23:38,993 | INFO | REPORT BOT STARTED
+2026-06-19 20:23:38,994 | INFO | ===================================
+2026-06-19 20:23:38,994 | INFO | Authenticating Graph
+2026-06-19 20:23:39,750 | INFO | Graph Authentication Success
+2026-06-19 20:23:39,750 | INFO | Connecting SQL Server
+2026-06-19 20:23:39,946 | INFO | SQL Connection Success
+2026-06-19 20:23:40,315 | INFO | Found 1 request(s)
+2026-06-19 20:23:40,315 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 20:23:40,388 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 20:23:40,412 | ERROR | ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+2026-06-19 20:23:40,471 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    df = execute_sp(
+        conn,
+        mapping["stored_procedure"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 227, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.Error: ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+
+2026-06-19 20:23:40,471 | INFO | BOT FINISHED
+2026-06-19 20:29:09,508 | INFO | ===================================
+2026-06-19 20:29:09,509 | INFO | REPORT BOT STARTED
+2026-06-19 20:29:09,509 | INFO | ===================================
+2026-06-19 20:29:09,509 | INFO | Authenticating Graph
+2026-06-19 20:29:09,776 | INFO | Graph Authentication Success
+2026-06-19 20:29:09,777 | INFO | Connecting SQL Server
+2026-06-19 20:29:09,949 | INFO | SQL Connection Success
+2026-06-19 20:29:10,235 | INFO | Found 1 request(s)
+2026-06-19 20:29:10,235 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 20:29:10,285 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 20:36:18,248 | ERROR | ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNBVIA'. (208) (SQLExecDirectW)")
+2026-06-19 20:36:18,628 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 139, in main
+    totalrow = get_total_rows(
+        conn,
+        mapping["final_table"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 13, in get_total_rows
+    cursor.execute(
+    ~~~~~~~~~~~~~~^
+        f"SELECT COUNT(*) FROM {table_name}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNBVIA'. (208) (SQLExecDirectW)")
+
+2026-06-19 20:36:18,629 | INFO | BOT FINISHED
+2026-06-19 20:37:56,579 | INFO | ===================================
+2026-06-19 20:37:56,579 | INFO | REPORT BOT STARTED
+2026-06-19 20:37:56,579 | INFO | ===================================
+2026-06-19 20:37:56,580 | INFO | Authenticating Graph
+2026-06-19 20:37:57,180 | INFO | Graph Authentication Success
+2026-06-19 20:37:57,180 | INFO | Connecting SQL Server
+2026-06-19 20:37:57,344 | INFO | SQL Connection Success
+2026-06-19 20:37:57,693 | INFO | Found 1 request(s)
+2026-06-19 20:37:57,694 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 20:37:57,739 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 20:40:05,637 | ERROR | ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNB119'. (208) (SQLExecDirectW)")
+2026-06-19 20:40:05,667 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 139, in main
+    totalrow = get_total_rows(
+        conn,
+        mapping["final_table"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 13, in get_total_rows
+    cursor.execute(
+    ~~~~~~~~~~~~~~^
+        f"SELECT COUNT(*) FROM {table_name}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNB119'. (208) (SQLExecDirectW)")
+
+2026-06-19 20:40:05,669 | INFO | BOT FINISHED
+2026-06-19 20:40:26,651 | INFO | ===================================
+2026-06-19 20:40:26,651 | INFO | REPORT BOT STARTED
+2026-06-19 20:40:26,651 | INFO | ===================================
+2026-06-19 20:40:26,652 | INFO | Authenticating Graph
+2026-06-19 20:40:27,003 | INFO | Graph Authentication Success
+2026-06-19 20:40:27,003 | INFO | Connecting SQL Server
+2026-06-19 20:40:27,170 | INFO | SQL Connection Success
+2026-06-19 20:40:27,496 | INFO | Found 1 request(s)
+2026-06-19 20:40:27,496 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 20:40:27,537 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 20:47:50,199 | ERROR | ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNB119'. (208) (SQLExecDirectW)")
+2026-06-19 20:47:50,250 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 139, in main
+    totalrow = get_total_rows(
+        conn,
+        mapping["final_table"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 13, in get_total_rows
+    cursor.execute(
+    ~~~~~~~~~~~~~~^
+        f"SELECT COUNT(*) FROM {table_name}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'AKUABNB119'. (208) (SQLExecDirectW)")
+
+2026-06-19 20:47:50,250 | INFO | BOT FINISHED
+2026-06-19 20:52:33,544 | INFO | ===================================
+2026-06-19 20:52:33,545 | INFO | REPORT BOT STARTED
+2026-06-19 20:52:33,545 | INFO | ===================================
+2026-06-19 20:52:33,546 | INFO | Authenticating Graph
+2026-06-19 20:52:33,902 | INFO | Graph Authentication Success
+2026-06-19 20:52:33,902 | INFO | Connecting SQL Server
+2026-06-19 20:52:34,381 | INFO | SQL Connection Success
+2026-06-19 20:52:35,156 | INFO | Found 1 request(s)
+2026-06-19 20:52:35,157 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 20:52:35,222 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 21:01:48,711 | INFO | Rows Returned: 261
+2026-06-19 21:01:48,714 | INFO | Exporting Excel
+2026-06-19 21:01:48,714 | ERROR | name 'export_table_to_excel' is not defined
+2026-06-19 21:01:48,775 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 160, in main
+    excel_files = export_table_to_excel(
+                  ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'export_table_to_excel' is not defined. Did you mean: 'export_to_excel'?
+
+2026-06-19 21:01:48,776 | INFO | BOT FINISHED
+2026-06-19 21:02:50,627 | INFO | ===================================
+2026-06-19 21:02:50,628 | INFO | REPORT BOT STARTED
+2026-06-19 21:02:50,628 | INFO | ===================================
+2026-06-19 21:02:50,630 | INFO | Authenticating Graph
+2026-06-19 21:02:51,175 | INFO | Graph Authentication Success
+2026-06-19 21:02:51,175 | INFO | Connecting SQL Server
+2026-06-19 21:02:51,390 | INFO | SQL Connection Success
+2026-06-19 21:02:51,817 | INFO | Found 1 request(s)
+2026-06-19 21:02:51,818 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 21:02:51,871 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 21:11:46,698 | INFO | Rows Returned: 261
+2026-06-19 21:11:46,698 | INFO | Exporting Excel
+2026-06-19 21:11:46,699 | ERROR | 'FinalTable'
+2026-06-19 21:11:46,766 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 162, in main
+    mapping["FinalTable"],
+    ~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'FinalTable'
+
+2026-06-19 21:11:46,766 | INFO | BOT FINISHED

@@ -26,6 +26,7 @@ def get_mapping(conn, request_id):
         SELECT
             RequestID,
             StoredProcedure,
+            FinalTable,
             OutputFileName,
             OneDriveFolder
         FROM dbo.ReportRequestMapping
@@ -41,6 +42,7 @@ def get_mapping(conn, request_id):
     return {
         "request_id": row.RequestID,
         "stored_procedure": row.StoredProcedure,
+        "final_table": row.FinalTable,
         "output_file": row.OutputFileName,
         "folder": row.OneDriveFolder
     }
@@ -85,6 +87,38 @@ def log_success(
     cursor = conn.cursor()
 
     cursor.execute("""
+                   
+        IF EXISTS
+        (
+            SELECT 1
+            FROM dbo.EmailAutomationLog
+            WHERE MessageID = ?
+        )
+        BEGIN
+            DELETE FROM dbo.EmailAutomationLog WHERE MessageID = ?
+            INSERT INTO dbo.EmailAutomationLog
+            (
+                MessageID,
+                ConversationID,
+                RequestID,
+                Subject,
+                SenderEmail,
+                ProcessDate,
+                Status,
+                OneDriveLink,
+                ErrorMessage
+            )
+            VALUES
+            (
+                ?, ?, ?, ?, ?,
+                GETDATE(),
+                'SUCCESS',
+                ?,
+                NULL
+            )       
+        END
+        ELSE
+                                                          
         INSERT INTO dbo.EmailAutomationLog
         (
             MessageID,
@@ -129,6 +163,24 @@ def log_failure(
     cursor = conn.cursor()
 
     cursor.execute("""
+    IF EXISTS
+    (
+        SELECT 1
+        FROM dbo.EmailAutomationLog
+        WHERE MessageID = ?
+    )
+    BEGIN
+
+        UPDATE dbo.EmailAutomationLog
+        SET
+            Status = 'FAILED',
+            ErrorMessage = ?
+        WHERE MessageID = ?
+
+    END
+    ELSE
+    BEGIN
+
         INSERT INTO dbo.EmailAutomationLog
         (
             MessageID,
@@ -138,7 +190,6 @@ def log_failure(
             SenderEmail,
             ProcessDate,
             Status,
-            OneDriveLink,
             ErrorMessage
         )
         VALUES
@@ -146,10 +197,14 @@ def log_failure(
             ?, ?, ?, ?, ?,
             GETDATE(),
             'FAILED',
-            NULL,
             ?
         )
+
+    END
     """,
+    message_id,
+    str(error_message),
+    message_id,
     message_id,
     conversation_id,
     request_id,
@@ -162,12 +217,27 @@ def log_failure(
 
 
 def execute_sp(
-        conn,
-        stored_procedure):
+    conn,
+    stored_procedure
+):
+    print(f"Executing {stored_procedure}")
 
-    query = f"EXEC {stored_procedure}"
+    cursor = conn.cursor()
 
-    return pd.read_sql(
-        query,
-        conn
+    cursor.execute(f"EXEC {stored_procedure}")
+    conn.commit()
+
+    print(f"SP Completed")
+
+def get_total_rows(
+    conn,
+    table_name
+):
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        f"SELECT COUNT(*) FROM Tampungan.dbo.{table_name}"
     )
+
+    return cursor.fetchone()[0]

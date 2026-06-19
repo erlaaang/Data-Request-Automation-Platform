@@ -19,7 +19,7 @@ from modules.mail import (
     mark_as_read
 )
 
-from modules.exporter import export_to_excel
+from modules.exporter import export_to_excel, get_total_rows
 
 from modules.zipper import create_zip
 
@@ -131,13 +131,18 @@ def main():
                     f"Executing SP: {mapping['stored_procedure']}"
                 )
 
-                df = execute_sp(
+                execute_sp(
                     conn,
                     mapping["stored_procedure"]
                 )
 
+                totalrow = get_total_rows(
+                    conn,
+                    mapping["final_table"]
+                )
+
                 logger.info(
-                    f"Rows Returned: {len(df)}"
+                    f"Rows Returned: {totalrow}"
                 )
 
                 excel_name = (
@@ -152,10 +157,12 @@ def main():
                     "Exporting Excel"
                 )
 
-                export_to_excel(
-                    df,
+                excel_files = export_to_excel(
+                    conn,
+                    mapping["Final_Table"],
                     "temp",
-                    f"{excel_name}.xlsx"
+                    mapping["OutputFileName"],
+                    mapping["OrderByColumn"]
                 )
 
                 password = (
@@ -171,7 +178,7 @@ def main():
                 )
 
                 create_zip(
-                    excel_path,
+                    excel_files,
                     zip_path,
                     password
                 )
