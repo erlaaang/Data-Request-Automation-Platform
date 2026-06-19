@@ -1282,3 +1282,54 @@ KeyError: 'OutputFileName'
 AttributeError: 'pyodbc.Row' object has no attribute 'OrderByColumn'
 
 2026-06-19 21:56:16,176 | INFO | BOT FINISHED
+2026-06-19 21:56:51,567 | INFO | ===================================
+2026-06-19 21:56:51,568 | INFO | REPORT BOT STARTED
+2026-06-19 21:56:51,568 | INFO | ===================================
+2026-06-19 21:56:51,568 | INFO | Authenticating Graph
+2026-06-19 21:56:52,105 | INFO | Graph Authentication Success
+2026-06-19 21:56:52,105 | INFO | Connecting SQL Server
+2026-06-19 21:56:52,526 | INFO | SQL Connection Success
+2026-06-19 21:56:53,036 | INFO | Found 1 request(s)
+2026-06-19 21:56:53,036 | INFO | Processing: [AR-WPAKUA119] Permintaan Data Detail AKUA Padang
+2026-06-19 21:56:53,123 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-19 22:04:50,945 | INFO | Rows Returned: 261
+2026-06-19 22:04:50,945 | INFO | Exporting Excel
+2026-06-19 22:04:51,507 | INFO | Creating ZIP
+2026-06-19 22:04:51,514 | INFO | Uploading OneDrive
+2026-06-19 22:04:52,639 | INFO | Item ID: 01NTDGD2FH5X34OCGFFNAZZ4M5B7ZOIEZL
+2026-06-19 22:04:54,209 | INFO | Replying Email
+2026-06-19 22:04:56,196 | INFO | Marking Email Read
+2026-06-19 22:04:56,493 | ERROR | ('The SQL contains 14 parameter markers, but 6 parameters were supplied', 'HY000')
+2026-06-19 22:04:56,547 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 230, in main
+    log_success(
+    ~~~~~~~~~~~^
+        conn,
+        ^^^^^
+    ...<5 lines>...
+        share_link
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 91, in log_success
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+    
+    
+    ...<57 lines>...
+    share_link
+    ^^^^^^^^^^
+    )
+    ^
+pyodbc.ProgrammingError: ('The SQL contains 14 parameter markers, but 6 parameters were supplied', 'HY000')
+
+2026-06-19 22:04:56,548 | INFO | BOT FINISHED
+2026-06-19 22:12:18,699 | INFO | ===================================
+2026-06-19 22:12:18,699 | INFO | REPORT BOT STARTED
+2026-06-19 22:12:18,699 | INFO | ===================================
+2026-06-19 22:12:18,700 | INFO | Authenticating Graph
+2026-06-19 22:12:19,474 | INFO | Graph Authentication Success
+2026-06-19 22:12:19,474 | INFO | Connecting SQL Server
+2026-06-19 22:12:19,840 | INFO | SQL Connection Success
+2026-06-19 22:12:20,269 | INFO | Found 0 request(s)
+2026-06-19 22:12:20,269 | INFO | BOT FINISHED
