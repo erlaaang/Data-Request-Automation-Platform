@@ -230,14 +230,15 @@ def execute_sp(
     conn,
     stored_procedure
 ):
-    print(f"Executing {stored_procedure}")
+    """Execute a stored procedure and commit the transaction."""
+    print(f"Executing {stored_procedure}... This may take a while.")
 
     cursor = conn.cursor()
 
     cursor.execute(f"EXEC {stored_procedure}")
     conn.commit()
 
-    print(f"SP Completed")
+    print("SP Completed")
 
 def get_total_rows(
     conn,

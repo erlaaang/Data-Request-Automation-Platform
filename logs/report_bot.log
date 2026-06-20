@@ -1333,3 +1333,148 @@ pyodbc.ProgrammingError: ('The SQL contains 14 parameter markers, but 6 paramete
 2026-06-19 22:12:19,840 | INFO | SQL Connection Success
 2026-06-19 22:12:20,269 | INFO | Found 0 request(s)
 2026-06-19 22:12:20,269 | INFO | BOT FINISHED
+2026-06-20 09:46:14,887 | INFO | ===================================
+2026-06-20 09:46:14,888 | INFO | REPORT BOT STARTED
+2026-06-20 09:46:14,888 | INFO | ===================================
+2026-06-20 09:46:14,889 | INFO | Authenticating Graph
+2026-06-20 09:46:15,163 | INFO | Graph Authentication Success
+2026-06-20 09:46:15,163 | INFO | Connecting SQL Server
+2026-06-20 09:46:15,556 | INFO | SQL Connection Success
+2026-06-20 09:46:15,820 | INFO | Found 0 request(s)
+2026-06-20 09:46:15,820 | INFO | BOT FINISHED
+2026-06-20 09:49:53,620 | INFO | ===================================
+2026-06-20 09:49:53,621 | INFO | REPORT BOT STARTED
+2026-06-20 09:49:53,621 | INFO | ===================================
+2026-06-20 09:49:53,621 | INFO | Authenticating Graph
+2026-06-20 09:49:54,271 | INFO | Graph Authentication Success
+2026-06-20 09:49:54,271 | INFO | Connecting SQL Server
+2026-06-20 09:49:54,481 | INFO | SQL Connection Success
+2026-06-20 09:49:54,778 | INFO | Found 1 request(s)
+2026-06-20 09:49:54,778 | INFO | Processing: [AR-WPAKUA119] Permohonan Data Detail Produksi AKUA BRISURF, Non BRISURF, dan CBC Kantor Cabang Padang Periode 1 Januari s.d  19 Juni 2026
+2026-06-20 09:49:54,945 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-20 09:49:54,987 | ERROR | ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+2026-06-20 09:49:55,051 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 237, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.Error: ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+
+2026-06-20 09:49:55,052 | INFO | BOT FINISHED
+2026-06-20 09:56:20,849 | INFO | ===================================
+2026-06-20 09:56:20,850 | INFO | REPORT BOT STARTED
+2026-06-20 09:56:20,850 | INFO | ===================================
+2026-06-20 09:56:20,850 | INFO | Authenticating Graph
+2026-06-20 09:56:21,118 | INFO | Graph Authentication Success
+2026-06-20 09:56:21,118 | INFO | Connecting SQL Server
+2026-06-20 09:56:21,302 | INFO | SQL Connection Success
+2026-06-20 09:56:21,719 | INFO | Found 1 request(s)
+2026-06-20 09:56:21,720 | INFO | Processing: [AR-WPAKUA119] Permohonan Data Detail Produksi AKUA BRISURF, Non BRISURF, dan CBC Kantor Cabang Padang Periode 1 Januari s.d  19 Juni 2026
+2026-06-20 09:56:21,775 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-20 09:56:21,796 | ERROR | ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+2026-06-20 09:56:21,834 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 238, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.Error: ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+
+2026-06-20 09:56:21,836 | INFO | BOT FINISHED
+2026-06-20 09:58:11,178 | INFO | ===================================
+2026-06-20 09:58:11,178 | INFO | REPORT BOT STARTED
+2026-06-20 09:58:11,178 | INFO | ===================================
+2026-06-20 09:58:11,179 | INFO | Authenticating Graph
+2026-06-20 09:58:11,816 | INFO | Graph Authentication Success
+2026-06-20 09:58:11,816 | INFO | Connecting SQL Server
+2026-06-20 09:58:11,957 | INFO | SQL Connection Success
+2026-06-20 09:58:12,318 | INFO | Found 1 request(s)
+2026-06-20 09:58:12,318 | INFO | Processing: [AR-WPAKUA119] Permohonan Data Detail Produksi AKUA BRISURF, Non BRISURF, dan CBC Kantor Cabang Padang Periode 1 Januari s.d  19 Juni 2026
+2026-06-20 09:58:12,361 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-20 09:58:12,362 | ERROR | ('The SQL contains 0 parameter markers, but 1 parameters were supplied', 'HY000')
+2026-06-20 09:58:12,401 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 238, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}", stored_procedure)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('The SQL contains 0 parameter markers, but 1 parameters were supplied', 'HY000')
+
+2026-06-20 09:58:12,402 | INFO | BOT FINISHED
+2026-06-20 09:59:00,849 | INFO | ===================================
+2026-06-20 09:59:00,850 | INFO | REPORT BOT STARTED
+2026-06-20 09:59:00,850 | INFO | ===================================
+2026-06-20 09:59:00,851 | INFO | Authenticating Graph
+2026-06-20 09:59:01,463 | INFO | Graph Authentication Success
+2026-06-20 09:59:01,464 | INFO | Connecting SQL Server
+2026-06-20 09:59:01,641 | INFO | SQL Connection Success
+2026-06-20 09:59:01,991 | INFO | Found 1 request(s)
+2026-06-20 09:59:01,991 | INFO | Processing: [AR-WPAKUA119] Permohonan Data Detail Produksi AKUA BRISURF, Non BRISURF, dan CBC Kantor Cabang Padang Periode 1 Januari s.d  19 Juni 2026
+2026-06-20 09:59:02,037 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-20 09:59:02,054 | ERROR | ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+2026-06-20 09:59:02,092 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 238, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.Error: ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column name or number of supplied values does not match table definition. (213) (SQLExecDirectW)')
+
+2026-06-20 09:59:02,093 | INFO | BOT FINISHED
+2026-06-20 10:01:58,922 | INFO | ===================================
+2026-06-20 10:01:58,922 | INFO | REPORT BOT STARTED
+2026-06-20 10:01:58,923 | INFO | ===================================
+2026-06-20 10:01:58,924 | INFO | Authenticating Graph
+2026-06-20 10:01:59,521 | INFO | Graph Authentication Success
+2026-06-20 10:01:59,521 | INFO | Connecting SQL Server
+2026-06-20 10:01:59,672 | INFO | SQL Connection Success
+2026-06-20 10:01:59,927 | INFO | Found 0 request(s)
+2026-06-20 10:01:59,927 | INFO | BOT FINISHED
+2026-06-20 10:02:16,842 | INFO | ===================================
+2026-06-20 10:02:16,842 | INFO | REPORT BOT STARTED
+2026-06-20 10:02:16,842 | INFO | ===================================
+2026-06-20 10:02:16,843 | INFO | Authenticating Graph
+2026-06-20 10:02:17,352 | INFO | Graph Authentication Success
+2026-06-20 10:02:17,352 | INFO | Connecting SQL Server
+2026-06-20 10:02:17,516 | INFO | SQL Connection Success
+2026-06-20 10:02:17,789 | INFO | Found 1 request(s)
+2026-06-20 10:02:17,789 | INFO | Processing: [AR-WPAKUA119] Permohonan Data Detail Produksi AKUA BRISURF, Non BRISURF, dan CBC Kantor Cabang Padang Periode 1 Januari s.d  19 Juni 2026
+2026-06-20 10:02:17,840 | INFO | Executing SP: dbo.SPAR_WPAKUA119
+2026-06-20 10:10:44,553 | INFO | Rows Returned: 284
+2026-06-20 10:10:44,555 | INFO | Exporting Excel
+2026-06-20 10:10:45,146 | INFO | Creating ZIP
+2026-06-20 10:10:45,155 | INFO | Uploading OneDrive
+2026-06-20 10:10:46,344 | INFO | Item ID: 01NTDGD2FH5X34OCGFFNAZZ4M5B7ZOIEZL
+2026-06-20 10:10:46,895 | INFO | Replying Email
+2026-06-20 10:10:48,623 | INFO | Marking Email Read
+2026-06-20 10:10:48,968 | INFO | SUCCESS: AR-WPAKUA119
+2026-06-20 10:10:48,969 | INFO | BOT FINISHED
