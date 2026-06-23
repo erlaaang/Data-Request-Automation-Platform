@@ -119,6 +119,7 @@ def update_draft(
             Download Report
         </a>
         <a Mohon untuk melakukan cek dan validasi data ulang pada data yang kami kirim sebelum diserahkan ke pihak terkait./a>
+
         <a Demikian kami sampaikan, atas perhatian dan kerjasamanya kami ucapkan terimakasih/a>
     </p>
 

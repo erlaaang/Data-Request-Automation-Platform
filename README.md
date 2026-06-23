@@ -1,280 +1,254 @@
-# BRI Insurance - Automated Report Distribution Bot
+# BRINS Report Automation Platform
 
 ## Overview
 
-Automated Report Distribution Bot is a Python-based solution developed by the Data Management Department to automate report requests received through email.
+BRINS Report Automation Platform is an automated email-driven reporting system developed to reduce manual effort in fulfilling recurring data requests.
 
-The solution monitors incoming emails, identifies report requests based on predefined Request IDs, executes corresponding SQL Server stored procedures, generates Excel reports, secures the files using password-protected ZIP archives, uploads them to OneDrive, and automatically replies to the original email thread with a download link.
-
-This automation significantly reduces manual effort in report generation and distribution while improving consistency, traceability, and response time.
+The platform monitors incoming Outlook emails, identifies report requests based on predefined request IDs, executes SQL Server stored procedures, generates Excel reports, uploads them to OneDrive, and automatically replies to the requester with a download link.
 
 ---
 
-## Key Features
+## Features
 
-* Automated email request processing
-* Request ID based report mapping
-* SQL Server stored procedure execution
-* Excel report generation
-* Password-protected ZIP archive creation
-* OneDrive upload integration
-* Organization-wide share link generation
-* Automatic Reply-All email response
-* Processing audit log
-* Duplicate request prevention
-* Scheduled execution through Windows Task Scheduler
+### Email Automation
 
----
+* Monitor incoming Outlook emails using Microsoft Graph API
+* Detect report requests based on Request ID
+* Prevent duplicate processing
+* Automatically reply to requesters using Reply All
+* Mark processed emails as read
 
-## Business Process
+### Report Generation
 
-### Current Process
+* Execute SQL Server stored procedures
+* Export large datasets to Excel
+* Automatically split files exceeding Excel row limits (1,000,000 rows per file)
+* Generate ZIP archives when multiple Excel files are produced
 
-1. User sends report request email.
-2. Data Management team receives request.
-3. Staff manually executes SQL query or stored procedure.
-4. Staff exports result to Excel.
-5. Staff compresses file into ZIP.
-6. Staff uploads file to OneDrive.
-7. Staff replies to requester.
-8. Staff manually tracks completed requests.
+### OneDrive Integration
 
-### Automated Process
+* Upload generated reports to OneDrive
+* Generate shareable download links
+* Include download links in automated email responses
 
-1. User sends report request email.
-2. Bot detects request email.
-3. Bot identifies Request ID.
-4. Bot executes corresponding stored procedure.
-5. Bot generates Excel report.
-6. Bot creates password-protected ZIP archive.
-7. Bot uploads file to OneDrive.
-8. Bot generates share link.
-9. Bot replies to original email thread.
-10. Bot records processing history.
+### Logging & Monitoring
+
+* Track successful report deliveries
+* Track failed executions
+* Store processing history in SQL Server
+* Prevent duplicate processing using Message ID validation
 
 ---
 
-## System Architecture
-
-Requester Email
-↓
-Microsoft Graph API
-↓
-Report Automation Bot (Python)
-↓
-SQL Server Stored Procedure
-↓
-Excel Generation
-↓
-ZIP Encryption
-↓
-OneDrive Upload
-↓
-Share Link Creation
-↓
-Reply-All Email
-↓
-EmailAutomationLog
-
----
-
-## Request ID Format
-
-Subject format:
+## Architecture
 
 ```text
-[DR-TEST01] Monthly Production Report
+Outlook Mailbox
+       │
+       ▼
+Microsoft Graph API
+       │
+       ▼
+Python Automation Service
+       │
+       ├── Request Validation
+       │
+       ├── SQL Server Stored Procedure
+       │
+       ├── Excel Export
+       │
+       ├── ZIP Packaging
+       │
+       ├── OneDrive Upload
+       │
+       └── Automated Reply
+       │
+       ▼
+SQL Server Logging
 ```
-
-The value inside square brackets is used as the Request ID.
 
 ---
 
-## Database Objects
+## Technology Stack
 
-### ReportRequestMapping
+### Backend
 
-Stores report configuration.
+* Python 3.x
+* Requests
+* Pandas
+* OpenPyXL
+* PyODBC
 
-| Column          | Description                 |
-| --------------- | --------------------------- |
-| RequestID       | Unique Request Identifier   |
-| StoredProcedure | Stored Procedure Name       |
-| OutputFileName  | Output Excel Filename       |
-| OneDriveFolder  | Destination OneDrive Folder |
-| IsActive        | Enable / Disable Report     |
+### Database
 
-Example:
+* Microsoft SQL Server
+
+### Email Service
+
+* Microsoft Graph API
+* Outlook Online
+
+### File Storage
+
+* Microsoft OneDrive
+* SharePoint Online
+
+---
+
+## Project Structure
+
+```text
+Data-Request-Automation-Platform/
+│
+├── report_bot.py
+│
+├── config.ini
+│
+├── modules/
+│   ├── auth.py
+│   ├── database.py
+│   ├── exporter.py
+│   ├── mail.py
+│   ├── onedrive.py
+│   └── logger.py
+│
+├── logs/
+│
+└── output/
+```
+
+---
+
+## Processing Flow
+
+### 1. Receive Request
+
+Example email subject:
+
+```text
+[AR-WPAKUA119] Permohonan Data Detail Produksi AKUA
+```
+
+### 2. Validate Request
+
+The system extracts:
+
+```text
+AR-WPAKUA119
+```
+
+and checks whether a report mapping exists.
+
+### 3. Execute Stored Procedure
+
+Configured stored procedure:
 
 ```sql
-INSERT INTO dbo.ReportRequestMapping
-(
-    RequestID,
-    StoredProcedure,
-    OutputFileName,
-    OneDriveFolder,
-    IsActive
-)
-VALUES
-(
-    'AR-TEST03',
-    'dbo.SP_TEST03',
-    'TEST>1MILROW',
-    'ReportAutomation/Test',
-    1
-);
+EXEC dbo.SPAR_WPAKUA119
+```
+
+### 4. Export Result
+
+The generated dataset is exported to Excel.
+
+If the result exceeds 1 million rows:
+
+```text
+Report_Part_1.xlsx
+Report_Part_2.xlsx
+Report_Part_3.xlsx
+...
+```
+
+### 5. Upload to OneDrive
+
+Generated files are uploaded automatically to OneDrive.
+
+### 6. Send Reply
+
+The requester receives an automated reply containing a download link.
+
+### 7. Log Result
+
+Processing information is stored in:
+
+```sql
+dbo.EmailAutomationLog
 ```
 
 ---
+
+## Logging Table
 
 ### EmailAutomationLog
 
-Stores processing history.
-
-| Column       | Description              |
-| ------------ | ------------------------ |
-| MessageID    | Email Message Identifier |
-| RequestID    | Request Identifier       |
-| ProcessDate  | Processing Timestamp     |
-| Status       | SUCCESS / FAILED         |
-| OneDriveLink | Generated Share Link     |
-| ErrorMessage | Failure Reason           |
+| Column         | Description                 |
+| -------------- | --------------------------- |
+| MessageID      | Original Outlook Message ID |
+| ConversationID | Email Conversation ID       |
+| RequestID      | Report Request ID           |
+| Subject        | Email Subject               |
+| SenderEmail    | Request Sender              |
+| ProcessDate    | Processing Timestamp        |
+| Status         | SUCCESS / FAILED            |
+| OneDriveLink   | Generated Report Link       |
+| ErrorMessage   | Failure Details             |
 
 ---
 
-## Security
+## Duplicate Prevention
 
-### ZIP Encryption
+The platform prevents duplicate processing using:
 
-Generated reports are protected using AES ZIP encryption.
+* Message ID validation
+* Logging table lookup
+* Conversation tracking
 
-Password format:
+This ensures the same request is never processed twice.
 
-```text
-{PASSWORD_PREFIX}{CURRENT_YEAR}
-```
+---
+
+## Scheduler
+
+The application is designed to run through:
+
+### Windows Task Scheduler
 
 Example:
 
 ```text
-BRINS2026
+Every 15 minutes
 ```
 
-Password prefix is configurable through:
+or
 
-```ini
-[zip]
-password-prefix=BRINS
-```
+### SQL Server Agent
 
----
-
-## Technologies Used
-
-* Python
-* Microsoft Graph API
-* Microsoft OneDrive
-* SQL Server
-* PyODBC
-* Pandas
-* OpenPyXL
-* PyZipper
-* Windows Task Scheduler
-
----
-
-## Scheduling
-
-The automation is configured to run:
-
-```text
-Start Time : 09:00
-Frequency  : Every 1 Hour
-End Time   : 23:00
-```
-
-Using Windows Task Scheduler.
-
----
-
-## Benefits
-
-### Operational Efficiency
-
-* Eliminates repetitive manual report generation.
-* Reduces report delivery time.
-
-### Standardization
-
-* Consistent report delivery process.
-* Consistent file naming convention.
-* Consistent distribution method.
-
-### Auditability
-
-* Full processing history.
-* Error tracking.
-* Duplicate prevention.
-
-### Scalability
-
-New reports can be added without modifying Python code.
-
-Only a new record is required in:
-
-```sql
-dbo.ReportRequestMapping
-```
+for enterprise deployment.
 
 ---
 
 ## Future Enhancements
 
-### Phase 2
-
-* Service Principal Authentication
-* Fully unattended execution
-* Multi-mailbox support
-* Report usage analytics
-* Dashboard monitoring
-
-### Phase 3
-
-* Conversational Analytics Integration
-* Natural Language Report Requests
-* AI-based Request Classification
-* Automated Data Quality Validation
+* Web dashboard for request monitoring
+* Grafana integration
+* Microsoft Teams notifications
+* Dynamic request configuration
+* Self-service report portal
+* AI-assisted report categorization
 
 ---
 
 ## Author
 
-Initiator:
 Erlangga Riyyan Nugraha
 
-Department:
-Data Management Department
+Data Architect | BRI Insurance
 
-Organization:
-BRI Insurance
+Specialized in:
 
-Year:
-2026
-
-## Architecture
-report-automation/
-│
-├── report_bot.py              # Main program
-├── config.ini
-├── requirements.txt
-│
-├── modules/
-│   ├── auth.py                # Microsoft Graph login
-│   ├── mail.py                # Read mail / reply all
-│   ├── database.py            # SQL functions
-│   ├── exporter.py            # Excel export
-│   ├── zipper.py              # Password ZIP
-│   └── onedrive.py            # Upload + Share Link
-│
-└── logs/
-    └── report_bot.log
+* Data Architecture
+* SQL Server
+* ETL & Automation
+* Reporting Solutions
+* Data Governance
