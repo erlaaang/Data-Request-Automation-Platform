@@ -162,7 +162,8 @@ def main():
                     mapping["final_table"],
                     "temp",
                     mapping["output_file"],
-                    mapping["order_by_column"]
+                    mapping["order_by_column"],
+                    mapping.get("split_column")
                 )
 
                 password = (

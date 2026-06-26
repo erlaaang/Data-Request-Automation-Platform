@@ -1701,3 +1701,68 @@ pyodbc.ProgrammingError: ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL S
 2026-06-23 10:17:11,118 | INFO | Marking Email Read
 2026-06-23 10:17:11,991 | INFO | SUCCESS: AR-TEST02
 2026-06-23 10:17:11,993 | INFO | BOT FINISHED
+2026-06-26 17:34:08,775 | INFO | ===================================
+2026-06-26 17:34:08,776 | INFO | REPORT BOT STARTED
+2026-06-26 17:34:08,776 | INFO | ===================================
+2026-06-26 17:34:08,777 | INFO | Authenticating Graph
+2026-06-26 17:34:09,194 | INFO | Graph Authentication Success
+2026-06-26 17:34:09,195 | INFO | Connecting SQL Server
+2026-06-26 17:34:09,442 | INFO | SQL Connection Success
+2026-06-26 17:34:09,692 | INFO | Found 1 request(s)
+2026-06-26 17:34:09,692 | INFO | Processing: [AR-WPROESB] TEST SPLIT BY COLUMN
+2026-06-26 17:34:09,772 | INFO | Executing SP: dbo.SPAR_WPROESB
+2026-06-26 17:34:10,369 | ERROR | ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]There is already an object named 'WP_ROEAST' in the database. (2714) (SQLExecDirectW)")
+2026-06-26 17:34:10,410 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 240, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]There is already an object named 'WP_ROEAST' in the database. (2714) (SQLExecDirectW)")
+
+2026-06-26 17:34:10,411 | INFO | BOT FINISHED
+2026-06-26 17:45:01,622 | INFO | ===================================
+2026-06-26 17:45:01,623 | INFO | REPORT BOT STARTED
+2026-06-26 17:45:01,623 | INFO | ===================================
+2026-06-26 17:45:01,624 | INFO | Authenticating Graph
+2026-06-26 17:45:02,003 | INFO | Graph Authentication Success
+2026-06-26 17:45:02,003 | INFO | Connecting SQL Server
+2026-06-26 17:45:02,174 | INFO | SQL Connection Success
+2026-06-26 17:45:02,495 | INFO | Found 1 request(s)
+2026-06-26 17:45:02,495 | INFO | Processing: [AR-WPROESB] TEST SPLIT BY COLUMN
+2026-06-26 17:45:02,531 | INFO | Executing SP: dbo.SPAR_WPROESB
+2026-06-26 17:49:31,259 | INFO | Rows Returned: 449530
+2026-06-26 17:49:31,260 | INFO | Exporting Excel
+2026-06-26 18:14:01,835 | INFO | Creating ZIP
+2026-06-26 18:14:05,100 | INFO | Uploading OneDrive
+2026-06-26 18:14:16,398 | INFO | Item ID: 01NTDGD2CQMDUR2MOIPFEK44ENPLWG7L5G
+2026-06-26 18:14:17,020 | INFO | Replying Email
+2026-06-26 18:14:18,825 | INFO | Marking Email Read
+2026-06-26 18:14:19,271 | INFO | SUCCESS: AR-WPROESB
+2026-06-26 18:14:19,282 | INFO | BOT FINISHED
+2026-06-26 19:09:49,441 | INFO | ===================================
+2026-06-26 19:09:49,441 | INFO | REPORT BOT STARTED
+2026-06-26 19:09:49,441 | INFO | ===================================
+2026-06-26 19:09:49,442 | INFO | Authenticating Graph
+2026-06-26 19:09:50,230 | INFO | Graph Authentication Success
+2026-06-26 19:09:50,231 | INFO | Connecting SQL Server
+2026-06-26 19:09:50,405 | INFO | SQL Connection Success
+2026-06-26 19:09:50,704 | INFO | Found 1 request(s)
+2026-06-26 19:09:50,704 | INFO | Processing: [AR-WPROESB] TEST SPLIT BY COLUMN
+2026-06-26 19:09:50,741 | INFO | Executing SP: dbo.SPAR_WPROESB
+2026-06-26 19:14:32,954 | INFO | Rows Returned: 449530
+2026-06-26 19:14:32,954 | INFO | Exporting Excel
+2026-06-26 19:22:17,642 | INFO | Creating ZIP
+2026-06-26 19:22:21,684 | INFO | Uploading OneDrive
+2026-06-26 19:22:34,396 | INFO | Item ID: 01NTDGD2CQMDUR2MOIPFEK44ENPLWG7L5G
+2026-06-26 19:22:34,805 | INFO | Replying Email
+2026-06-26 19:22:36,442 | INFO | Marking Email Read
+2026-06-26 19:22:36,795 | INFO | SUCCESS: AR-WPROESB
+2026-06-26 19:22:36,810 | INFO | BOT FINISHED
