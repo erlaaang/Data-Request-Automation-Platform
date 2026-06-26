@@ -29,7 +29,8 @@ def get_mapping(conn, request_id):
             FinalTable,
             OutputFileName,
             OrderByColumn,
-            OneDriveFolder
+            OneDriveFolder,
+            split_column
         FROM dbo.ReportRequestMapping
         WHERE RequestID = ?
         AND IsActive = 1
@@ -46,7 +47,8 @@ def get_mapping(conn, request_id):
         "final_table": row.FinalTable,
         "output_file": row.OutputFileName,
         "order_by_column": row.OrderByColumn,
-        "folder": row.OneDriveFolder
+        "folder": row.OneDriveFolder,
+        "split_column": row.split_column
     }
 
 def is_conversation_processed(

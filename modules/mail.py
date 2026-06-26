@@ -3,6 +3,9 @@ import re
 import requests
 from datetime import datetime, timezone
 
+# Default network timeout (seconds) for requests to avoid hanging indefinitely
+DEFAULT_TIMEOUT = 10
+
 
 def extract_request_id(subject):
 
@@ -113,20 +116,24 @@ def update_draft(
     }
 
     body = f"""
-    <p>
-        <a Berikut kami lampirkan data sesai dengan permintaan pada link berikut :>
-        <a href="{share_link}">
-            Download Report
-        </a>
-        <a Mohon untuk melakukan cek dan validasi data ulang pada data yang kami kirim sebelum diserahkan ke pihak terkait./a>
+        <p>Berikut kami lampirkan data sesuai permintaan. Mohon untuk dapat mengelola data sesuai kebutuhan dan melakukan cek ulang pada data yang kami kirim sebelum diserahkan ke pihak terkait. Untuk password file akan kami sampaikan melalui media lain.</p>
 
-        <a Demikian kami sampaikan, atas perhatian dan kerjasamanya kami ucapkan terimakasih/a>
-    </p>
+        <p><a href="{share_link}">Download Report</a></p>
+        <p>Request ID: {request_id}</p>
 
-    <p>
-        Request ID: {request_id}
-    </p>
-    """
+        <p>Demikian kami sampaikan, atas perhatian dan kerjasamanya kami ucapkan terimakasih.</p>
+        
+        <p>Best Regards,<br>
+        <strong>Erlangga Riyyan Nugraha</strong><br>
+        IT Data Management Department<br>
+        Technology and Information System Division<br>
+        Graha BRI Insurance<br>
+        Jl. Mampang Prapatan Raya No.18<br>
+        Jakarta Selatan, DKI Jakarta, 12790<br>
+        Phone : 021 - 79170477 | Mobile : +628212759155<br>
+        <a href="https://www.brins.co.id">www.brins.co.id</a>
+        </p>
+        """
 
     response = requests.patch(
         f"https://graph.microsoft.com/v1.0/users/{mailbox}/messages/{draft_id}",
@@ -137,6 +144,7 @@ def update_draft(
                 "content": body
             }
         }
+        , timeout=DEFAULT_TIMEOUT
     )
 
     response.raise_for_status()
@@ -175,6 +183,7 @@ def mark_as_read(
         json={
             "isRead": True
         }
+        , timeout=DEFAULT_TIMEOUT
     )
 
     response.raise_for_status()

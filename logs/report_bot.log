@@ -1489,3 +1489,215 @@ pyodbc.Error: ('21S01', '[21S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL 
 2026-06-20 12:09:46,706 | INFO | Processing: [AR-WPAKUA119] Permohonan Data Detail Produksi AKUA BRISURF, Non BRISURF, dan CBC Kantor Cabang Padang Periode 1 Januari s.d  19 Juni 2026
 2026-06-20 12:09:46,727 | INFO | Already Processed
 2026-06-20 12:09:46,727 | INFO | BOT FINISHED
+2026-06-23 09:36:03,762 | INFO | ===================================
+2026-06-23 09:36:03,763 | INFO | REPORT BOT STARTED
+2026-06-23 09:36:03,764 | INFO | ===================================
+2026-06-23 09:36:03,765 | INFO | Authenticating Graph
+2026-06-23 09:36:05,979 | INFO | Graph Authentication Success
+2026-06-23 09:36:05,979 | INFO | Connecting SQL Server
+2026-06-23 09:36:06,560 | INFO | SQL Connection Success
+2026-06-23 09:36:07,250 | INFO | Found 1 request(s)
+2026-06-23 09:36:07,251 | INFO | Processing: [AR-TEST03]
+2026-06-23 09:36:07,283 | INFO | Executing SP: dbo.SP_TEST03
+2026-06-23 09:36:27,205 | INFO | Rows Returned: 1200000
+2026-06-23 09:36:27,205 | INFO | Exporting Excel
+2026-06-23 09:37:05,877 | ERROR | [Errno 22] Invalid argument: 'temp\\TEST>1MILROW_Part1.xlsx'
+2026-06-23 09:37:05,931 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 160, in main
+    excel_files = export_to_excel(
+        conn,
+    ...<3 lines>...
+        mapping["order_by_column"]
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\exporter.py", line 115, in export_to_excel
+    with pd.ExcelWriter(
+         ~~~~~~~~~~~~~~^
+            file_path,
+            ^^^^^^^^^^
+            engine="openpyxl"
+            ^^^^^^^^^^^^^^^^^
+    ) as writer:
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 62, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<3 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1281, in __init__
+    self._handles = get_handle(
+                    ~~~~~~~~~~^
+        path, mode, storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\pandas\io\common.py", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+OSError: [Errno 22] Invalid argument: 'temp\\TEST>1MILROW_Part1.xlsx'
+
+2026-06-23 09:37:05,934 | INFO | BOT FINISHED
+2026-06-23 09:40:12,252 | INFO | ===================================
+2026-06-23 09:40:12,252 | INFO | REPORT BOT STARTED
+2026-06-23 09:40:12,253 | INFO | ===================================
+2026-06-23 09:40:12,253 | INFO | Authenticating Graph
+2026-06-23 09:40:12,684 | INFO | Graph Authentication Success
+2026-06-23 09:40:12,684 | INFO | Connecting SQL Server
+2026-06-23 09:40:12,847 | INFO | SQL Connection Success
+2026-06-23 09:40:13,596 | INFO | Found 1 request(s)
+2026-06-23 09:40:13,596 | INFO | Processing: [AR-TEST03]
+2026-06-23 09:40:13,643 | INFO | Executing SP: dbo.SP_TEST03
+2026-06-23 09:40:13,652 | ERROR | ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]There is already an object named 'TEST03' in the database. (2714) (SQLExecDirectW)")
+2026-06-23 09:40:13,697 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 238, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]There is already an object named 'TEST03' in the database. (2714) (SQLExecDirectW)")
+
+2026-06-23 09:40:13,697 | INFO | BOT FINISHED
+2026-06-23 09:42:03,967 | INFO | ===================================
+2026-06-23 09:42:03,968 | INFO | REPORT BOT STARTED
+2026-06-23 09:42:03,968 | INFO | ===================================
+2026-06-23 09:42:03,969 | INFO | Authenticating Graph
+2026-06-23 09:42:04,639 | INFO | Graph Authentication Success
+2026-06-23 09:42:04,639 | INFO | Connecting SQL Server
+2026-06-23 09:42:04,787 | INFO | SQL Connection Success
+2026-06-23 09:42:05,459 | INFO | Found 1 request(s)
+2026-06-23 09:42:05,459 | INFO | Processing: [AR-TEST03]
+2026-06-23 09:42:05,484 | INFO | Executing SP: dbo.SP_TEST03
+2026-06-23 09:42:16,850 | INFO | Rows Returned: 1200000
+2026-06-23 09:42:16,851 | INFO | Exporting Excel
+2026-06-23 09:44:51,197 | INFO | Creating ZIP
+2026-06-23 09:44:52,485 | INFO | Uploading OneDrive
+2026-06-23 09:45:02,392 | INFO | Item ID: 01NTDGD2FSCXJQ3B5ENJE2IJ6DPRA3FGO3
+2026-06-23 09:45:03,393 | INFO | Replying Email
+2026-06-23 09:45:05,291 | INFO | Marking Email Read
+2026-06-23 09:45:05,736 | INFO | SUCCESS: AR-TEST03
+2026-06-23 09:45:05,738 | INFO | BOT FINISHED
+2026-06-23 09:49:41,901 | INFO | ===================================
+2026-06-23 09:49:41,902 | INFO | REPORT BOT STARTED
+2026-06-23 09:49:41,902 | INFO | ===================================
+2026-06-23 09:49:41,904 | INFO | Authenticating Graph
+2026-06-23 09:49:43,019 | INFO | Graph Authentication Success
+2026-06-23 09:49:43,020 | INFO | Connecting SQL Server
+2026-06-23 09:49:43,209 | INFO | SQL Connection Success
+2026-06-23 09:49:43,854 | INFO | Found 0 request(s)
+2026-06-23 09:49:43,854 | INFO | BOT FINISHED
+2026-06-23 09:49:54,600 | INFO | ===================================
+2026-06-23 09:49:54,601 | INFO | REPORT BOT STARTED
+2026-06-23 09:49:54,601 | INFO | ===================================
+2026-06-23 09:49:54,602 | INFO | Authenticating Graph
+2026-06-23 09:49:55,329 | INFO | Graph Authentication Success
+2026-06-23 09:49:55,330 | INFO | Connecting SQL Server
+2026-06-23 09:49:55,447 | INFO | SQL Connection Success
+2026-06-23 09:49:56,062 | INFO | Found 1 request(s)
+2026-06-23 09:49:56,063 | INFO | Processing: [AR-TEST02]
+2026-06-23 09:49:56,359 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-23 09:49:56,406 | ERROR | ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]There is already an object named 'TEST02' in the database. (2714) (SQLExecDirectW)")
+2026-06-23 09:49:56,676 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 134, in main
+    execute_sp(
+    ~~~~~~~~~~^
+        conn,
+        ^^^^^
+        mapping["stored_procedure"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\database.py", line 238, in execute_sp
+    cursor.execute(f"EXEC {stored_procedure}")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]There is already an object named 'TEST02' in the database. (2714) (SQLExecDirectW)")
+
+2026-06-23 09:49:56,676 | INFO | BOT FINISHED
+2026-06-23 09:50:55,149 | INFO | ===================================
+2026-06-23 09:50:55,149 | INFO | REPORT BOT STARTED
+2026-06-23 09:50:55,149 | INFO | ===================================
+2026-06-23 09:50:55,150 | INFO | Authenticating Graph
+2026-06-23 09:50:55,490 | INFO | Graph Authentication Success
+2026-06-23 09:50:55,491 | INFO | Connecting SQL Server
+2026-06-23 09:50:55,620 | INFO | SQL Connection Success
+2026-06-23 09:50:56,242 | INFO | Found 1 request(s)
+2026-06-23 09:50:56,242 | INFO | Processing: [AR-TEST02]
+2026-06-23 09:50:56,268 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-23 09:50:56,314 | INFO | Rows Returned: 100
+2026-06-23 09:50:56,315 | INFO | Exporting Excel
+2026-06-23 09:50:57,216 | INFO | Creating ZIP
+2026-06-23 09:50:57,227 | INFO | Uploading OneDrive
+2026-06-23 09:50:58,205 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-23 09:50:58,756 | INFO | Replying Email
+2026-06-23 09:51:01,037 | INFO | Marking Email Read
+2026-06-23 09:51:01,433 | INFO | SUCCESS: AR-TEST02
+2026-06-23 09:51:01,435 | INFO | BOT FINISHED
+2026-06-23 09:55:10,361 | INFO | ===================================
+2026-06-23 09:55:10,361 | INFO | REPORT BOT STARTED
+2026-06-23 09:55:10,361 | INFO | ===================================
+2026-06-23 09:55:10,362 | INFO | Authenticating Graph
+2026-06-23 09:55:11,038 | INFO | Graph Authentication Success
+2026-06-23 09:55:11,039 | INFO | Connecting SQL Server
+2026-06-23 09:55:11,240 | INFO | SQL Connection Success
+2026-06-23 09:55:11,955 | INFO | Found 1 request(s)
+2026-06-23 09:55:11,956 | INFO | Processing: [AR-TEST02]
+2026-06-23 09:55:11,993 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-23 09:55:12,031 | INFO | Rows Returned: 100
+2026-06-23 09:55:12,032 | INFO | Exporting Excel
+2026-06-23 09:55:12,654 | INFO | Creating ZIP
+2026-06-23 09:55:12,666 | INFO | Uploading OneDrive
+2026-06-23 09:55:13,396 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-23 09:55:14,252 | INFO | Replying Email
+2026-06-23 09:55:16,909 | INFO | Marking Email Read
+2026-06-23 09:55:17,818 | INFO | SUCCESS: AR-TEST02
+2026-06-23 09:55:17,819 | INFO | BOT FINISHED
+2026-06-23 10:12:37,369 | INFO | ===================================
+2026-06-23 10:12:37,370 | INFO | REPORT BOT STARTED
+2026-06-23 10:12:37,370 | INFO | ===================================
+2026-06-23 10:12:37,372 | INFO | Authenticating Graph
+2026-06-23 10:12:37,945 | INFO | Graph Authentication Success
+2026-06-23 10:12:37,945 | INFO | Connecting SQL Server
+2026-06-23 10:12:38,122 | INFO | SQL Connection Success
+2026-06-23 10:12:38,548 | INFO | Found 1 request(s)
+2026-06-23 10:12:38,549 | INFO | Processing: [AR-TEST02]
+2026-06-23 10:12:38,563 | INFO | Already Processed
+2026-06-23 10:12:38,564 | INFO | BOT FINISHED
+2026-06-23 10:15:30,063 | INFO | ===================================
+2026-06-23 10:15:30,063 | INFO | REPORT BOT STARTED
+2026-06-23 10:15:30,064 | INFO | ===================================
+2026-06-23 10:15:30,065 | INFO | Authenticating Graph
+2026-06-23 10:15:31,181 | INFO | Graph Authentication Success
+2026-06-23 10:15:31,181 | INFO | Connecting SQL Server
+2026-06-23 10:15:31,444 | INFO | SQL Connection Success
+2026-06-23 10:15:32,032 | INFO | Found 1 request(s)
+2026-06-23 10:15:32,032 | INFO | Processing: [AR-TEST02]
+2026-06-23 10:15:32,052 | INFO | Already Processed
+2026-06-23 10:15:32,053 | INFO | BOT FINISHED
+2026-06-23 10:17:02,336 | INFO | ===================================
+2026-06-23 10:17:02,337 | INFO | REPORT BOT STARTED
+2026-06-23 10:17:02,337 | INFO | ===================================
+2026-06-23 10:17:02,338 | INFO | Authenticating Graph
+2026-06-23 10:17:04,324 | INFO | Graph Authentication Success
+2026-06-23 10:17:04,324 | INFO | Connecting SQL Server
+2026-06-23 10:17:04,518 | INFO | SQL Connection Success
+2026-06-23 10:17:05,219 | INFO | Found 1 request(s)
+2026-06-23 10:17:05,220 | INFO | Processing: [AR-TEST02]
+2026-06-23 10:17:05,288 | INFO | Executing SP: dbo.SP_TEST02
+2026-06-23 10:17:05,875 | INFO | Rows Returned: 100
+2026-06-23 10:17:05,875 | INFO | Exporting Excel
+2026-06-23 10:17:06,779 | INFO | Creating ZIP
+2026-06-23 10:17:06,796 | INFO | Uploading OneDrive
+2026-06-23 10:17:07,648 | INFO | Item ID: 01NTDGD2D5KQRAS3VL4REKLMBBCJQEXRKA
+2026-06-23 10:17:08,453 | INFO | Replying Email
+2026-06-23 10:17:11,118 | INFO | Marking Email Read
+2026-06-23 10:17:11,991 | INFO | SUCCESS: AR-TEST02
+2026-06-23 10:17:11,993 | INFO | BOT FINISHED
