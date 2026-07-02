@@ -16,6 +16,21 @@ def get_total_rows(
 
     return cursor.fetchone()[0]
 
+for value in df[split_column].dropna().unique():
+
+    group_df = df[df[split_column] == value]
+
+    if len(group_df) <= EXCEL_LIMIT:
+
+        save_excel(
+            group_df,
+            f"{value}.xlsx"
+        )
+
+    else:
+
+        split_into_parts(group_df)
+
 
 def export_to_excel(
         conn,
@@ -86,10 +101,14 @@ def export_to_excel(
             f"{min(offset + ROWS_PER_FILE, total_rows):,}"
         )
 
-        df = pd.read_sql(
-            query,
-            conn
-        )
+        df = pd.read_sql(query, conn)
+
+        split_column = mapping["split_column"]
+
+        if split_column:
+            export_by_group(df, split_column)
+        else:
+            export_by_rows(df)
 
         if total_parts == 1:
 

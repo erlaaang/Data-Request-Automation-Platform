@@ -1766,3 +1766,166 @@ pyodbc.ProgrammingError: ('42S01', "[42S01] [Microsoft][ODBC Driver 17 for SQL S
 2026-06-26 19:22:36,442 | INFO | Marking Email Read
 2026-06-26 19:22:36,795 | INFO | SUCCESS: AR-WPROESB
 2026-06-26 19:22:36,810 | INFO | BOT FINISHED
+2026-07-02 08:06:08,706 | INFO | ===================================
+2026-07-02 08:06:08,707 | INFO | REPORT BOT STARTED
+2026-07-02 08:06:08,707 | INFO | ===================================
+2026-07-02 08:06:08,707 | INFO | Authenticating Graph
+2026-07-02 08:06:09,442 | INFO | Graph Authentication Success
+2026-07-02 08:06:09,443 | INFO | Connecting SQL Server
+2026-07-02 08:06:10,234 | INFO | SQL Connection Success
+2026-07-02 08:06:11,249 | INFO | Found 1 request(s)
+2026-07-02 08:06:11,250 | INFO | Processing: [AR-MPROWSB]
+2026-07-02 08:06:11,351 | INFO | Executing SP: dbo.SPAR_MPROWSB
+2026-07-02 08:10:59,364 | INFO | Rows Returned: 830983
+2026-07-02 08:10:59,365 | INFO | Exporting Excel
+2026-07-02 08:53:45,181 | INFO | Creating ZIP
+2026-07-02 08:53:51,514 | INFO | Uploading OneDrive
+2026-07-02 08:55:31,046 | INFO | Item ID: 01NTDGD2FIRL5R3TIELJGKF5MW5TW52W2C
+2026-07-02 08:55:31,954 | INFO | Replying Email
+2026-07-02 08:55:34,931 | INFO | Marking Email Read
+2026-07-02 08:55:35,982 | INFO | SUCCESS: AR-MPROWSB
+2026-07-02 08:55:36,011 | INFO | BOT FINISHED
+2026-07-02 08:56:14,083 | INFO | ===================================
+2026-07-02 08:56:14,084 | INFO | REPORT BOT STARTED
+2026-07-02 08:56:14,085 | INFO | ===================================
+2026-07-02 08:56:14,087 | INFO | Authenticating Graph
+2026-07-02 08:56:15,301 | INFO | Graph Authentication Success
+2026-07-02 08:56:15,302 | INFO | Connecting SQL Server
+2026-07-02 08:56:15,846 | INFO | SQL Connection Success
+2026-07-02 08:56:16,300 | INFO | Found 1 request(s)
+2026-07-02 08:56:16,301 | INFO | Processing: [AR-MPROESB] Permohonan Data Produksi KC RO East 1 Juni s.d 31 Juni 2026
+2026-07-02 08:56:16,355 | INFO | Executing SP: dbo.SPAR_MPROESB
+2026-07-02 09:19:56,016 | INFO | Rows Returned: 9838331
+2026-07-02 09:19:56,021 | INFO | Exporting Excel
+2026-07-02 09:36:51,625 | INFO | ===================================
+2026-07-02 09:36:51,625 | INFO | REPORT BOT STARTED
+2026-07-02 09:36:51,626 | INFO | ===================================
+2026-07-02 09:36:51,629 | INFO | Authenticating Graph
+2026-07-02 09:36:52,353 | INFO | Graph Authentication Success
+2026-07-02 09:36:52,353 | INFO | Connecting SQL Server
+2026-07-02 09:36:52,972 | INFO | SQL Connection Success
+2026-07-02 09:36:53,264 | INFO | Found 0 request(s)
+2026-07-02 09:36:53,265 | INFO | BOT FINISHED
+2026-07-02 11:13:10,101 | INFO | ===================================
+2026-07-02 11:13:10,101 | INFO | REPORT BOT STARTED
+2026-07-02 11:13:10,101 | INFO | ===================================
+2026-07-02 11:13:10,102 | INFO | Authenticating Graph
+2026-07-02 11:13:10,540 | INFO | Graph Authentication Success
+2026-07-02 11:13:10,540 | INFO | Connecting SQL Server
+2026-07-02 11:13:10,748 | INFO | SQL Connection Success
+2026-07-02 11:13:11,401 | INFO | Found 1 request(s)
+2026-07-02 11:13:11,401 | INFO | Processing: [AR-MPROESB] Permohonan Data Produksi KC RO East 1 Juni s.d 31 Juni 2026
+2026-07-02 11:13:11,439 | INFO | Executing SP: dbo.SPAR_MPROESB
+2026-07-02 11:20:33,732 | INFO | Rows Returned: 1427084
+2026-07-02 11:20:33,733 | INFO | Exporting Excel
+2026-07-02 11:47:28,694 | INFO | Creating ZIP
+2026-07-02 11:47:40,053 | INFO | Uploading OneDrive
+2026-07-02 11:49:42,249 | ERROR | ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host'))
+2026-07-02 11:49:42,512 | ERROR | Traceback (most recent call last):
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionResetError: [Errno 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\adapters.py", line 645, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\urllib3\connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\report_bot.py", line 191, in main
+    item_id = upload_file(
+        token,
+    ...<3 lines>...
+        os.path.basename(zip_path)
+    )
+  File "C:\Users\15132000230\Documents\GitHub\Data-Request-Automation-Platform\modules\onedrive.py", line 20, in upload_file
+    response = requests.put(
+        f"https://graph.microsoft.com/v1.0/users/{drivebox}"
+    ...<5 lines>...
+        data=f
+    )
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\15132000230\AppData\Local\miniconda3\Lib\site-packages\requests\adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host'))
+
+2026-07-02 11:49:42,518 | INFO | BOT FINISHED
